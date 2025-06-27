@@ -1,0 +1,42 @@
+prontera,1,1,1	script	cash	-1,{
+    end;
+OnNPCKillEvent: 
+if(getmonsterinfo(killedrid,MOB_LV) >= 1 && getmonsterinfo(killedrid,MOB_LV) <= 50) goto cash1;
+if(getmonsterinfo(killedrid,MOB_LV) >= 51 && getmonsterinfo(killedrid,MOB_LV) <= 150) goto cash2;
+if(getmonsterinfo(killedrid,MOB_LV) >= 151 && getmonsterinfo(killedrid,MOB_LV) <= 250) goto cash3;
+if(getmonsterinfo(killedrid,MOB_LV) >= 251 && getmonsterinfo(killedrid,MOB_LV) <= 300) goto cash4; 
+close; 
+
+
+cash1: 
+            if (rand(1000) <= 1) getitem 670,1;	// 0.1% ±ÝÈ­
+            if (rand(1000) <= 3) getitem 672,1;	// 0.3% ÀºÈ­
+            if (rand(1000) <= 5) getitem 676,1;	// 0.5% µ¿È­
+	if (rand(1000) <= 2) getitem 25731,1; // 0.2% È®·ü·Î Á¦¸£´½
+	if (rand(1000) <= 2) getitem 25729,1; // 0.2% ½¦µµ¿ìµ¥¿ÀÄÜ
+	end;
+cash2:
+            if (rand(1000) <= 3) getitem 670,1;	// 0.3%
+            if (rand(1000) <= 5) getitem 672,1;	// 0.5
+            if (rand(1000) <= 10) getitem 676,1;	// 1
+	if (rand(1000) <= 3) getitem 25731,1; // 0.3% È®·ü·Î Á¦¸£´½
+	if (rand(1000) <= 3) getitem 25729,1; // 0.3% ½¦µµ¿ìµ¥¿ÀÄÜ
+	end;
+cash3:
+            if (rand(1000) <= 10) getitem 670,1;	// 1%
+            if (rand(1000) <= 20) getitem 672,1;	// 2
+            if (rand(1000) <= 30) getitem 676,1;	// 3
+	if (rand(1000) <= 10) getitem 25731,1; // 1% È®·ü·Î Á¦¸£´½
+	if (rand(1000) <= 10) getitem 25729,1; // 1% ½¦µµ¿ìµ¥¿ÀÄÜ
+	end;
+cash4:
+            if (rand(1000) <= 10) getitem 670,1;	// 1%
+            if (rand(1000) <= 20) getitem 672,1;	// 2
+            if (rand(1000) <= 30) getitem 676,1;	// 3
+	if (rand(1000) <= 6) getitem 1001480,1; // 0.3% °ñ´Ù
+	if (rand(1000) <= 10) getitem 1001479,1; // 0.5% ºí´Ù
+	if (rand(1000) <= 14) getitem 1001478,1; // 0.7% Ç»´Ù
+	if (rand(1000) <= 10) getitem 25731,1; // 1% È®·ü·Î Á¦¸£´½
+	if (rand(1000) <= 10) getitem 25729,1; // 1% ½¦µµ¿ìµ¥¿ÀÄÜ
+	end;	
+}

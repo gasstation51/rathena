@@ -497,7 +497,7 @@ void do_init_skill(void);
 void do_final_skill(void);
 
 /// Cast type
-enum e_cast_type { CAST_GROUND, CAST_DAMAGE, CAST_NODAMAGE };
+enum e_cast_type { CAST_GROUND, CAST_DAMAGE, CAST_NODAMAGE, CAST_SELF, CAST_BUFF };
 /// Returns the cast type of the skill: ground cast, castend damage, castend no damage
 e_cast_type skill_get_casttype(uint16 skill_id); //[Skotlex]
 const char*	skill_get_name( uint16 skill_id ); 	// [Skotlex]

@@ -1,0 +1,2488 @@
+-	script	텔레포터::Tele	82,{
+
+//시간이 지나도 npc창이 먹통이 되지 않음 (인던 npc에서 사용하는 진행불가 방지용 스크립트)
+	ignoretimeout 1;
+
+//일반 맵이나 던전 워프 비용 설정. 이 값을 0으로 하면 워프 비용이 들지 않습니다
+	.@warpzeny = 0;
+//마을 맵 워프 비용 설정
+	.@townzeny = 0;
+
+
+	mes "[텔레포트]";
+	mes "원하는 지역을 선택해 주세요.";
+	next;
+	
+if (Zeny < .@warpzeny) {
+	
+				mes "[텔레포트]";
+				mes "죄송합니다만, 워프를 이용하려면";
+				mes ""+ .@warpzeny + " 제니가 필요합니다.";
+				
+				close;
+				
+				end;
+			}	
+
+menu	"마을",Warp1,
+	"던전",Warp2,
+	"특수구역",Warp3,
+	"초보자",Warp4;
+
+Warp1:
+
+menu	"룬미드가르츠왕국 수도 프론테라",tPron,
+	"위성도시 이즈루드",tIz,
+	"산악도시 페이욘",tPay,
+	"사막도시 모로크",tMor,
+	"마법도시 게펜",tGef,
+	"상업도시 알베르타",tAlb,
+	"국경도시 알데바란",tAld,
+	"눈의 마을 루티에",tLu,
+	"해변도시 코모도",tComo,
+	"슈발츠 공화국 수도 유노",tYu,
+	"모라 마을",tmora,
+	"회색 늑대 마을",wolfvill,
+	"협곡마을 베인스",veins,
+	"아루나펠츠 교국 수도 라헬",fkgpf,
+	"전원도시 휘겔",hugel_city,
+	"기업도시 리히타르젠",lhz,
+	"강철도시 아인브로크",ein,
+	"아요타야",ayo,
+	"고도 용지성",tlou,
+	"우탄족마을 움발라",tum,
+	"신선의 섬 쿤룬",tgon,
+	"천수의나라 아마쯔",tAma,
+	"취소",LEnd;
+
+
+
+
+LWprn:
+
+menu	"프론테라 지하수로 1층",LWps1,
+	"프론테라 지하수로 2층",LWps2,
+	"프론테라 지하수로 3층",LWps3,
+	"프론테라 지하수로 4층",LWps4,
+	"미궁의 숲 1층",LWpm1,
+	"미궁의 숲 2층",LWpm2,
+	"미궁의 숲 3층",LWpm3,
+	"일루전 라비린스 prt_mz03_i",LWpm3_i,
+	"동쪽 오크 마을",Lorc1,
+	"서쪽 오크 마을",Lorc2,
+	"오크 마을(오크 히어로)",Lorc3,
+	"오크 던전 1층",LWod1,
+	"오크 던전 2층",LWod2,
+	"밤의 프론테라",LWprtnight,
+	"프론테라 지하 감옥",LWprtprison,
+	"취소",LEnd;
+tPron:
+	warp "prontera.gat",116,72;
+	Zeny -= .@townzeny; 
+	end;
+LWps1:
+	warp "prt_sewb1.gat",131,247;
+	Zeny -= .@warpzeny; 
+	end;
+LWps2:
+	warp "prt_sewb2.gat",19,19;
+	Zeny -= .@warpzeny; 
+	end;
+LWps3:
+	warp "prt_sewb3.gat",180,169;
+	Zeny -= .@warpzeny; 
+	end;
+LWps4:
+	warp "prt_sewb4.gat",100,92;
+	Zeny -= .@warpzeny; 
+	end;
+LWpm1:
+	warp "prt_maze01.gat",176,7;
+	Zeny -= .@warpzeny; 
+	end;
+LWpm2:
+	warp "prt_maze02.gat",93,19;
+	Zeny -= .@warpzeny; 
+	end;
+LWpm3:
+	warp "prt_maze03.gat",23,8;
+	Zeny -= .@warpzeny; 
+	end;
+LWpm3_i:
+	warp "prt_mz03_i.gat",23,8;
+	Zeny -= .@warpzeny; 
+	end;
+Lorc1:
+	warp "gef_fild10.gat",65,335;
+	Zeny -= .@warpzeny; 
+	end;
+Lorc2:
+	warp "gef_fild14.gat",367,219;
+	Zeny -= .@warpzeny; 
+	end; 
+Lorc3:
+	warp "gef_fild03.gat",371,278;
+	Zeny -= .@warpzeny; 
+	end; 
+LWod1:
+	warp "orcsdun01.gat",32,170;
+	Zeny -= .@warpzeny; 
+	end;
+LWod2:
+	warp "orcsdun02.gat",180,17;
+	Zeny -= .@warpzeny; 
+	end;
+LWprtnight:
+	warp "prt_q.gat",155,179;
+	Zeny -= .@warpzeny; 
+	end;
+LWprtprison:
+	warp "prt_prison.gat",165,290;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWizl:
+
+menu	"해저 동굴 1층",LWid1,
+	"해저 동굴 2층",LWid2,
+	"해저 동굴 3층",LWid3,
+	"해저 동굴 4층",LWid4,
+	"해저 신전",LWid5,
+	"해저 신전 2",LWid6,
+	"일루전 언더워터 상층",LWid7,
+	"일루전 언더워터 하층",LWid8,
+	"취소",LEnd;
+tIz:
+	warp "izlude.gat",128,98;
+	Zeny -= .@townzeny; 
+	end;
+LWid1:
+	warp "iz_dun00.gat",168,168;
+	Zeny -= .@warpzeny; 
+	end;
+LWid2:
+	warp "iz_dun01.gat",41,37;
+	Zeny -= .@warpzeny; 
+	end;
+LWid3:
+	warp "iz_dun02.gat",236,204;
+	Zeny -= .@warpzeny; 
+	end;
+LWid4:
+	warp "iz_dun03.gat",32,63;
+	Zeny -= .@warpzeny; 
+	end;
+LWid5:
+	warp "iz_dun04.gat",26,27;
+	Zeny -= .@warpzeny; 
+	end;
+LWid6:
+	warp "iz_dun05.gat",142,22;
+	Zeny -= .@warpzeny; 
+	end;
+LWid7:
+	warp "iz_dun04_i.gat",130,230;
+	Zeny -= .@warpzeny; 
+	end;
+LWid8:
+	warp "iz_dun05_i.gat",141,185;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWpay: 
+
+menu	"페이욘 지하 동굴 1층",LWpd1,
+	"페이욘 지하 동굴 2층",LWpd2,
+	"페이욘 지하 동굴 3층",LWpd3,
+	"페이욘 폐가촌 1층",LWpd4,
+	"페이욘 폐가촌 2층",LWpd5,
+	"일루전 문라이트",LWpdill,
+	"페이욘 동쪽 숲",Ledga,
+	"페이욘 서쪽 숲",Lring,
+	"취소",LEnd;
+tPay:
+	warp "payon.gat",161,58;
+	Zeny -= .@townzeny; 
+	end;
+LWpd1:
+	warp "pay_dun00.gat",21,183;
+	Zeny -= .@warpzeny; 
+	end;
+LWpd2:
+	warp "pay_dun01.gat",19,33;
+	Zeny -= .@warpzeny; 
+	end;
+LWpd3:
+	warp "pay_dun02.gat",19,63;
+	Zeny -= .@warpzeny; 
+	end;
+LWpd4:
+	warp "pay_dun03.gat",155,159;
+	Zeny -= .@warpzeny; 
+	end;
+LWpd5:
+	warp "pay_dun04.gat",34,202;
+	Zeny -= .@warpzeny; 
+	end;
+LWpdill:
+	warp "pay_d03_i.gat",155,159;
+	Zeny -= .@warpzeny; 
+	end;
+
+Ledga:
+	warp "pay_fild11.gat",294,135;
+	Zeny -= .@warpzeny; 
+	end;
+Lring:
+	warp "pay_fild04.gat",20,165;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWmor:
+
+menu	"스핑크스 1층",LWsp1,
+	"스핑크스 2층",LWsp2,
+	"스핑크스 3층",LWsp3,
+	"스핑크스 4층",LWsp4,
+	"스핑크스 5층(파라오)",LWsp5,
+	"피라미드 1층",LWpr1,
+	"피라미드 2층",LWpr2,
+	"피라미드 3층",LWpr3,
+	"피라미드 4층",LWpr4,
+	"피라미드 지하1층",LWpr5,
+	"피라미드 지하2층",LWpr6,
+	"나이트메어 피라미드 지하1층 moc_prydn1",LWprnight,
+	"나이트메어 피라미드 지하2층 moc_prydn2",LWprnight2,
+	"개미 지옥 1층",LWan1,
+	"개미 지옥 2층",LWan2,
+	"일루전 트윈스",LWan_i,
+	"취소",LEnd;
+tMor:
+	warp "morocc.gat",156,46;
+	Zeny -= .@townzeny; 
+	end;
+LWsp1:
+	warp "in_sphinx1.gat",288,9;
+	Zeny -= .@warpzeny; 
+	end;
+LWsp2:
+	warp "in_sphinx2.gat",149,82;
+	Zeny -= .@warpzeny; 
+	end;
+LWsp3:
+	warp "in_sphinx3.gat",210,54;
+	Zeny -= .@warpzeny; 
+	end;
+LWsp4:
+	warp "in_sphinx4.gat",10,222;
+	Zeny -= .@warpzeny; 
+	end;
+LWsp5:
+	warp "in_sphinx5.gat",100,99;
+	Zeny -= .@warpzeny; 
+	end;
+LWpr1:
+	warp "moc_pryd01.gat",192,9;
+	Zeny -= .@warpzeny; 
+	end;
+LWpr2:
+	warp "moc_pryd02.gat",10,192;
+	Zeny -= .@warpzeny; 
+	end;
+LWpr3:
+	warp "moc_pryd03.gat",100,92;
+	Zeny -= .@warpzeny; 
+	end;
+LWpr4:
+	warp "moc_pryd04.gat",18,187;
+	Zeny -= .@warpzeny; 
+	end;
+LWpr5:
+	warp "moc_pryd05.gat",94,96;
+	Zeny -= .@warpzeny; 
+	end;
+LWpr6:
+ 	warp "moc_pryd06.gat",192,10;
+ 	Zeny -= .@warpzeny; 
+	end;
+LWprnight:
+	warp "moc_prydn1.gat",94,96;
+	Zeny -= .@warpzeny; 
+	end;
+LWprnight2:
+ 	warp "moc_prydn2.gat",192,10;
+ 	Zeny -= .@warpzeny; 
+	end;
+LWan1:
+	warp "anthell01.gat",35,262;
+	Zeny -= .@warpzeny; 
+	end;
+LWan2:
+	warp "anthell02.gat",34,263;
+	Zeny -= .@warpzeny; 
+	end;
+LWan_i:
+	warp "ant_d02_i.gat",34,263;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWgef: 
+
+menu	"게펜 지하 던전 1층",LWgd1,
+	"게펜 지하 던전 2층",LWgd2,
+	"게펜 지하 던전 3층",LWgd3,
+	"게펜 지하 던전 4층",LWgd4,
+	"일루전 뱀파이어",LWgdill,
+	"묘르닐 폐광 1층",LWmd1,
+	"묘르닐 폐광 2층",LWmd2,
+	"묘르닐 폐광 3층",LWmd3,
+	"묘르닐 필드",qe1,
+	"게펜 필드",qe2,
+	"게페니아 1",Gefn1,
+	"게페니아 2",Gefn2,
+	"게페니아 3",Gefn3,
+	"게페니아 4",Gefn4,
+	"취소",LEnd;
+tGef:
+	warp "geffen.gat",120,39;
+	Zeny -= .@townzeny; 
+	end;
+Gefn1:
+	warp "gefenia01.gat",58,169;
+	Zeny -= .@warpzeny; 
+	end;
+Gefn2:
+	warp "gefenia02.gat",204,35;
+	Zeny -= .@warpzeny; 
+	end;
+Gefn3:
+	warp "gefenia03.gat",263,235;
+	Zeny -= .@warpzeny; 
+	end;
+Gefn4:
+	warp "gefenia04.gat",35,266;
+	Zeny -= .@warpzeny; 
+	end;
+LWgd1:
+	warp "gef_dun00.gat",104,99;
+	Zeny -= .@warpzeny; 
+	end;
+LWgd2:
+	warp "gef_dun01.gat",115,236;
+	Zeny -= .@warpzeny; 
+	end;
+LWgd3:
+	warp "gef_dun02.gat",106,132;
+	Zeny -= .@warpzeny; 
+	end;
+LWgd4:
+	warp "gef_dun03.gat",203,200;
+	Zeny -= .@warpzeny; 
+	end;
+LWgdill:
+	warp "gef_d01_i.gat",115,236;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmd1:
+	warp "mjo_dun01.gat",52,17;
+	Zeny -= .@warpzeny; 
+	end;
+LWmd2:
+	warp "mjo_dun02.gat",382,343;
+	Zeny -= .@warpzeny; 
+	end;
+LWmd3:
+	warp "mjo_dun03.gat",302,262;
+	Zeny -= .@warpzeny; 
+	end;
+qe1:
+	warp "mjolnir_04.gat",125,208;
+	Zeny -= .@warpzeny; 
+	end;
+qe2:
+	warp "gef_fild08.gat",357,187;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LGle: 
+
+menu	"수도원 입구",LWgl1,
+	"고성 1층",LWca1,
+	"고성 2층",LWca2,
+	"고성 기사단 1층",LWkn1,
+	"고성 기사단 2층",LWkn2,
+	"고성 지하 감옥 1층",LWgp1,
+	"고성 지하 감옥 2층",LWgp2,
+	"고성 지하 묘지",LWchy,
+	"고성 실내",LWin,
+	"고성 계단 던전",LWstp,
+	"고성 지하수로 1층",LWse1,
+	"고성 지하수로 2층",LWse2,
+	"고성 지하수로 3층",LWse3,
+	"고성 지하수로 4층",LWse4,
+	"고성 최하층 지하동굴 1층",LWdn1,
+	"고성 최하층 지하동굴 2층",LWdn2,
+	"나이트메어 고성 2층 gl_cas02_",LWglastnight,
+	"옛 기사단 1층 1@gl_k2",LWoldglast,
+	"옛 기사단 2층 2@gl_k2",LWoldglast2,
+	"고성 1층 어비스 gl_cas01_",LWoldglastabyss1,
+	"고성 2층 회랑 gl_cas02_",LWoldglastabyss2,
+	"취소",LEnd;
+LWgl1:
+	warp "glast_01.gat",200,125;
+	Zeny -= .@warpzeny; 
+	end;
+LWca1:
+	warp "gl_cas01.gat",199,29;
+	Zeny -= .@warpzeny; 
+	end;
+LWca2:
+	warp "gl_cas02.gat",104,25;
+	Zeny -= .@warpzeny; 
+	end;
+LWkn1:
+	warp "gl_knt01.gat",150,15;
+	Zeny -= .@warpzeny; 
+	end;
+LWkn2:
+	warp "gl_knt02.gat",157,287;
+	Zeny -= .@warpzeny; 
+	end;
+LWgp1:
+	warp "gl_prison.gat",14,70;
+	Zeny -= .@warpzeny; 
+	end;
+LWgp2:
+	warp "gl_prison1.gat",150,14;
+	Zeny -= .@warpzeny; 
+	end;
+LWchy:
+	warp "gl_chyard.gat",147,15;
+	Zeny -= .@warpzeny; 
+	end;
+LWin:
+	warp "gl_in01.gat",122,59;
+	Zeny -= .@warpzeny; 
+	end;
+LWstp:
+	warp "gl_step.gat",12,7;
+	Zeny -= .@warpzeny; 
+	end;
+LWse1:
+	warp "gl_sew01.gat",258,255;
+	Zeny -= .@warpzeny; 
+	end;
+LWse2:
+	warp "gl_sew02.gat",29,270;
+	Zeny -= .@warpzeny; 
+	end;
+LWse3:
+	warp "gl_sew03.gat",171,283;
+	Zeny -= .@warpzeny; 
+	end;
+LWse4:
+	warp "gl_sew04.gat",68,277;
+	Zeny -= .@warpzeny; 
+	end;
+LWdn1:
+	warp "gl_dun01.gat",133,271;
+	Zeny -= .@warpzeny; 
+	end;
+LWdn2:
+	warp "gl_dun02.gat",224,274;
+	Zeny -= .@warpzeny; 
+	end;
+LWglastnight:
+	warp "gl_cas02_.gat",104,31;
+	Zeny -= .@warpzeny; 
+	end;
+LWoldglast:
+	warp "1@gl_k2.gat",149,30;
+	Zeny -= .@warpzeny; 
+	end;
+LWoldglast2:
+	warp "2@gl_k2.gat",158,251;
+	Zeny -= .@warpzeny; 
+	end;
+LWoldglastabyss1:
+	warp "gl_cas01_.gat",200,35;
+	Zeny -= .@warpzeny; 
+	end;
+LWoldglastabyss2:
+	warp "gl_cas02_.gat",104,25;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWalv: 
+
+menu	"침몰선 1층",LWat1,
+	"침몰선 2층",LWat2,
+	"거북이 섬",LWti1,
+	"거북이 섬 던전",LWti2,
+	"거북이 섬 양거촌",LWti3,
+	"거북이 섬 구양궁",LWti4,
+	"일루전 구양궁(양거촌)",LWtiill,
+	"일루전 구양궁(구양궁)",LWtiill2,
+	"취소",LEnd;
+tAlb:
+	warp "alberta.gat",192,147;
+	Zeny -= .@townzeny; 
+	end;
+LWat1:
+	warp "treasure01.gat",69,24;
+	Zeny -= .@warpzeny; 
+	end;
+LWat2:
+	warp "treasure02.gat",102,27;
+	Zeny -= .@warpzeny; 
+	end;
+LWti1:
+	warp "tur_dun01.gat",161,34;
+	Zeny -= .@warpzeny; 
+	end;
+LWti2:
+	warp "tur_dun02.gat",148,264;
+	Zeny -= .@warpzeny; 
+	end;
+LWti3:
+	warp "tur_dun03.gat",132,189;
+	Zeny -= .@warpzeny; 
+	end;
+LWti4:
+	warp "tur_dun04.gat",100,192;
+	Zeny -= .@warpzeny; 
+	end;
+LWtiill:
+	warp "tur_d03_i.gat",132,189;
+	Zeny -= .@warpzeny; 
+	end;
+LWtiill2:
+	warp "tur_d04_i.gat",99,186;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWald: 
+
+menu	"시계탑 1층",LWct1,
+	"시계탑 2층",LWct2,
+	"시계탑 3층",LWct3,
+	"시계탑 4층",LWct4,
+	"뒤틀린 시간의 시계탑 2층",LWctnight,
+	"뒤틀린 시간의 시계탑 3층",LWctnight2,
+	"시계탑 지하 1층",LWcta,
+	"시계탑 지하 2층",LWctb,
+	"시계탑 지하 3층",LWctc,
+	"시계탑 지하 4층",LWctd,
+	"미지의 시계탑",LWcte,
+	"취소",LEnd;
+tAld:
+	warp "aldebaran.gat",168,112;
+	Zeny -= .@townzeny; 
+	end;
+LWct1:
+	warp "c_tower1.gat",199,159;
+	Zeny -= .@warpzeny; 
+	end;
+LWct2:
+	warp "c_tower2.gat",268,26;
+	Zeny -= .@warpzeny; 
+	end;
+LWct3:
+	warp "c_tower3.gat",65,147;
+	Zeny -= .@warpzeny; 
+	end;
+LWct4:
+	warp "c_tower4.gat",186,39;
+	Zeny -= .@warpzeny; 
+	end;
+LWctnight:
+	warp "c_tower2_.gat",268,26;
+	Zeny -= .@warpzeny; 
+	end;
+LWctnight2:
+	warp "c_tower3_.gat",65,147;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWcta:
+	warp "alde_dun01.gat",297,25;
+	Zeny -= .@warpzeny; 
+	end;
+LWctb:
+	warp "alde_dun02.gat",127,169;
+	Zeny -= .@warpzeny; 
+	end;
+LWctc:
+	warp "alde_dun03.gat",277,178;
+	Zeny -= .@warpzeny; 
+	end;
+LWctd:
+	warp "alde_dun04.gat",203,220;
+	Zeny -= .@warpzeny; 
+	end;
+LWcte:
+	warp "clock_01.gat",86,42;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWxms: 
+
+menu	"장난감 공장 창고",LWxd1,
+	"장난감 분류 창고",LWxd2,
+	"루티에 필드",LWxf,
+	"취소",LEnd;
+tLu:
+	warp "xmas.gat",148,118;
+	Zeny -= .@warpzeny; 
+	end;
+LWxd1:
+	warp "xmas_dun01.gat",205,17;
+	Zeny -= .@warpzeny; 
+	end;
+LWxd2:
+	warp "xmas_dun02.gat",129,133;
+	Zeny -= .@warpzeny; 
+	end;
+LWxf:
+	warp "xmas_fild01.gat",85,52;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+
+LWcom: 
+
+
+
+
+menu	"서쪽 동굴 카루",LWcdw,
+	"북쪽 동굴 루안다",LWcdn,
+	"동쪽 동굴 마오",LWcde,
+	"일루전 루안다",LWcdn_i,
+	"코코모 해변",L_cmd1,
+	"지나이 숲",L_cmd2,
+	"코코모 해변",L_cmd3,
+	"블루홀",LW_blu,
+	"취소",LEnd;
+tComo:
+	warp "comodo.gat",208,143;
+	Zeny -= .@townzeny; 
+	end;
+LWcdw:
+	warp "beach_dun.gat",266,67;
+	Zeny -= .@warpzeny; 
+	end;
+LWcdn:
+	warp "beach_dun2.gat",154,25;
+	Zeny -= .@warpzeny; 
+	end;
+LWcde:
+	warp "beach_dun3.gat",23,260;
+	Zeny -= .@warpzeny; 
+	end;
+LWcdn_i:
+	warp "com_d02_i.gat",154,25;
+	Zeny -= .@warpzeny; 
+	end;
+L_cmd1:
+	warp "cmd_fild02.gat",222,372;
+	Zeny -= .@warpzeny; 
+	end;
+L_cmd2:
+	warp "cmd_fild03.gat",27,269;
+	Zeny -= .@warpzeny; 
+	end;
+L_cmd3:
+	warp "cmd_fild04.gat",25,275;
+	Zeny -= .@warpzeny; 
+	end;
+LW_blu:
+	warp "cmd_bhole.gat",237,360;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWyun: 
+
+menu	"노그로드 1층",LWyd1,
+	"노그로드 2층", LWyd2,
+	"노그로드 3층", LWyd3,
+	"유페로스 폐허 1층",tjupe01,
+	"유페로스 폐허 2층",tjupe02,
+	"유페로스 중심부",tjupe03,
+	"유페로스 센터 jupe_gate",tjupe04,
+	"유페로스 동쪽 폐허 ver_eju",tverus,
+	"베루스 발굴지 verus04",tverus2,
+	"베루스 중앙 광장 verus03",tverus3,
+	"베루스 연구동-WISH verus02",tverus4,
+	"베루스 실험동-OPTATIO verus01",tverus5,
+	"지하 벙커 un_bunker",tverus6,
+	"기계인형공장 1층",rlrp1,
+	"기계인형공장 2층",rlrp2,
+
+	"엘메스 플레투",tYuf1,
+	"엘메스 플레투",tYuf2,
+	"취소",LEnd;
+tYu:
+	warp "yuno.gat",157,197;
+	Zeny -= .@warpzeny; 
+	end;
+LWyd1:
+	warp "mag_dun01.gat",126,68;
+	Zeny -= .@warpzeny; 
+	end;
+LWyd2:
+	warp "mag_dun02.gat",47,30;
+	Zeny -= .@warpzeny; 
+	end;
+LWyd3:
+	warp "mag_dun03.gat",47,30;
+	Zeny -= .@warpzeny; 
+	end;
+tjupe01:
+	warp "juperos_01.gat",53,247;	
+	Zeny -= .@warpzeny; 
+	end;
+tjupe02:
+	warp "juperos_02.gat",128,273;	
+	Zeny -= .@warpzeny; 
+	end;
+tjupe03:
+	warp "jupe_core.gat",149,286;	
+	Zeny -= .@warpzeny; 
+	end;
+tjupe04:
+	warp "jupe_gate.gat",50,145;
+	Zeny -= .@warpzeny; 
+	end;
+tverus:
+	warp "ver_eju.gat",18,148;
+	Zeny -= .@warpzeny; 
+	end;
+tverus2:
+	warp "verus04.gat",105,219;
+	Zeny -= .@warpzeny; 
+	end;
+tverus3:
+	warp "verus03.gat",123,26;
+	Zeny -= .@warpzeny; 
+	end;
+tverus4:
+	warp "verus02.gat",72,23;
+	Zeny -= .@warpzeny; 
+	end;
+tverus5:
+	warp "verus01.gat",239,73;
+	Zeny -= .@warpzeny; 
+	end;
+tverus6:
+	warp "un_bunker.gat",98,91;
+	Zeny -= .@warpzeny; 
+	end;
+rlrp1:
+	warp "kh_dun01.gat",3,231;
+	Zeny -= .@warpzeny; 
+	end;
+rlrp2:
+	warp "kh_dun02.gat",43,200;
+	Zeny -= .@warpzeny; 
+	end;
+
+tYuf1:
+	warp "yuno_fild03.gat",382,331;
+	Zeny -= .@warpzeny; 
+	end;
+tYuf2:
+	warp "yuno_fild05.gat",59,30;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWama: 
+
+menu	"천수의나라 아마쯔 동쪽 히라타 영지",tAmaeast,
+	"다다미 미궁",LWam1,
+	"지하숲 전장",LWam2,
+	"아마쯔 지하 신사(원령무사)",LWam3,
+	"취소",LEnd;
+tAma:
+	warp "amatsu.gat",113,154;
+	Zeny -= .@warpzeny; 
+	end;
+tAmaeast:
+	warp "eastamatsu.gat",168,62;
+	Zeny -= .@warpzeny; 
+	end;
+LWam1:
+	warp "ama_dun01.gat",229,8;
+	Zeny -= .@warpzeny; 
+	end;
+LWam2:
+	warp "ama_dun02.gat",37,45;
+	Zeny -= .@warpzeny; 
+	end;
+LWam3:
+	warp "ama_dun03.gat",119,14;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWgon: 
+
+menu	"서왕모 신전",LWgon1,
+	"신선의 바둑판",LWgon2,
+	"무릉도원",LWgon3,
+	"취소",LEnd;
+tgon:
+	warp "gonryun.gat",160,120;
+	Zeny -= .@warpzeny; 
+	end;
+LWgon1:
+	warp "gon_dun01.gat",153,48;
+	Zeny -= .@warpzeny; 
+	end;
+LWgon2:
+	warp "gon_dun02.gat",17,113;
+	Zeny -= .@warpzeny; 
+	end;
+LWgon3:
+	warp "gon_dun03.gat",68,9;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWum: 
+
+menu	"나무속의 목공소",LWum1,
+	"나무속의 이계통로",LWum2,
+	"카라라늪",LWumf,
+	"취소",LEnd;
+tum:
+	warp "umbala.gat",98,154;
+	Zeny -= .@warpzeny; 
+	end;
+LWum1:
+	warp "um_dun01.gat",42,31;
+	Zeny -= .@warpzeny; 
+	end; 
+LWum2:
+	warp "um_dun02.gat",48,30;
+	Zeny -= .@warpzeny; 
+	end;
+LWumf:
+	warp "um_fild03.gat",35,146;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWnif: 
+
+menu	"죽은자의나라 니플헤임",tnif,
+	"스켈링튼",LWnif1,
+	"굘의 골짜기",LWnif2,
+	"망자의 연회장 1층 nif_dun01",LWnifdun1,
+	"망자의 연회장 2층 nif_dun02",LWnifdun2,
+	"취소",LEnd;
+tnif:
+	warp "niflheim.gat",189,207;
+	Zeny -= .@warpzeny; 
+	end;
+LWnif1:
+	warp "nif_fild01.gat",343,322;
+	Zeny -= .@warpzeny; 
+	end;
+LWnif2:
+	warp "nif_fild02.gat",376,235;
+	Zeny -= .@warpzeny; 
+	end;
+LWnifdun1:
+	warp "nif_dun01.gat",145,125;
+	Zeny -= .@warpzeny; 
+	end;
+LWnifdun2:
+	warp "nif_dun02.gat",150,37;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWlou: 
+
+menu	"왕릉",LWlou1,
+	"왕릉 내부",LWlou2,
+	"센양궁",LWlou3,
+	"용지성필드",LWlouf,
+	"취소",LEnd;
+tlou:
+	warp "louyang.gat",104,213;
+	Zeny -= .@warpzeny; 
+	end;
+LWlou1:
+	warp "lou_dun01.gat",219,196;
+	Zeny -= .@warpzeny; 
+	end;
+LWlou2:
+	warp "lou_dun02.gat",282,20;
+	Zeny -= .@warpzeny; 
+	end;
+LWlou3:
+	warp "lou_dun03.gat",165,38;
+	Zeny -= .@warpzeny; 
+	end;
+LWlouf:
+	warp "lou_fild01.gat",232,353;
+	Zeny -= .@warpzeny; 
+	end; 
+
+
+ayothaya:
+
+menu	"고대 신전 미궁",ayo1,
+	"고대 신전 내부",ayo2,
+	"취소",LEnd;
+ayo:
+	warp "ayothaya.gat",208,195;
+	Zeny -= .@warpzeny; 
+	end;
+ayo1:
+	warp "ayo_dun01.gat",275,17;
+	Zeny -= .@warpzeny; 
+	end;
+ayo2:
+	warp "ayo_dun02.gat",149,17;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+einbroch:
+
+menu	"채광마을 아인베흐",ein0,
+	"광산던전 1층",ein1,
+	"광산던전 2층",ein2,
+	"광산던전 3층",ein3,
+	"일루전 광산던전 2층 ein_d02_i",ein2_i,
+	"베르너 연구소 slabw01",slabw01,
+	"버려진 연구소 아미키티아 1층 amicitia1",amicitia1,
+	"버려진 연구소 아미키티아 2층 amicitia2",amicitia2,
+	"아인브로크 필드 ein_fild02",einf1,
+	"아인브로크 필드 ein_fild07",einf2,
+	"취소",LEnd;
+ein:
+	warp "einbroch.gat",64,200;
+	Zeny -= .@warpzeny; 
+	end;
+ein0:
+	warp "einbech.gat",70,95;
+	Zeny -= .@warpzeny; 
+	end;
+ein1:
+	warp "ein_dun01.gat",22,14;
+	Zeny -= .@warpzeny; 
+	end;
+ein2:
+	warp "ein_dun02.gat",292,290;
+	Zeny -= .@warpzeny; 
+	end;
+ein3:
+	warp "ein_dun03.gat",268,276;
+	Zeny -= .@warpzeny; 
+	end;
+ein2_i:
+	warp "ein_d02_i.gat",292,290;
+	Zeny -= .@warpzeny; 
+	end;
+slabw01:
+	warp "slabw01.gat",16,88;
+	Zeny -= .@warpzeny; 
+	end;
+amicitia1:
+	warp "amicitia1.gat",244,244;
+	Zeny -= .@warpzeny; 
+	end;
+amicitia2:
+	warp "amicitia2.gat",146,275;
+	Zeny -= .@warpzeny; 
+	end;
+einf1:
+	warp "ein_fild02.gat",109,358;
+	Zeny -= .@warpzeny; 
+	end;
+einf2:
+	warp "ein_fild07.gat",147,360;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//코르 지역
+cor:
+
+menu	"특수경계지역 코르 sp_cor",LWcor,
+	"오스 sp_os",LWos,
+	"루두스 1층 sp_rudus",LWrudus,
+	"루두스 2층 sp_rudus2",LWrudus2,
+	"루두스 3층 sp_rudus3",LWrudus3,
+	"루두스 4층 sp_rudus4",LWrudus4,
+	"취소",LEnd;
+
+
+LWcor:
+	warp "sp_cor.gat",163,92;
+	Zeny -= .@warpzeny; 
+	end;
+LWos:
+	warp "sp_os.gat",249,354;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWrudus:
+	warp "sp_rudus.gat",185,258;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWrudus2:
+	warp "sp_rudus2.gat",185,258;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWrudus3:
+	warp "sp_rudus3.gat",366,207;
+	Zeny -= .@warpzeny; 
+	end;
+LWrudus4:
+	warp "sp_rudus4.gat",376,157;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+lighthalzen:
+
+menu	"생체실험 연구소 1층",bio1,
+	"생체실험 연구소 2층",bio2,
+	"생체실험 연구소 3층",bio3,
+	"생체실험 연구소 4층",bio4,
+	"생체실험 연구소 5층 전사자의 무덤",bio5,
+	"취소",LEnd;
+lhz:
+	warp "lighthalzen.gat",158,92;
+	Zeny -= .@warpzeny; 
+	end;
+
+bio1:
+	warp "lhz_dun01.gat",150,288;
+	Zeny -= .@warpzeny; 
+	end;
+bio2:
+	warp "lhz_dun02.gat",18,148;
+	Zeny -= .@warpzeny; 
+	end;
+bio3:
+	warp "lhz_dun03.gat",140,133;
+	Zeny -= .@warpzeny; 
+	end;
+bio4:
+	warp "lhz_dun04.gat",244,54;
+	Zeny -= .@warpzeny; 
+	end;
+bio5:
+	warp "lhz_dun_n.gat",140,133;
+	Zeny -= .@warpzeny; 
+	end;
+
+hugel:
+
+menu	"타나토스 타워 하층부 1층",tana1,
+	"타나토스 타워 하층부 2층",tana2,
+	"타나토스 타워 하층부 3층",tana3,
+	"타나토스 타워 하층부 4층",tana4,
+	"타나토스 타워 하층부 5층",tana5,
+	"타나토스 타워 상층부 6층",tana6,
+	"타나토스 타워 상층부 7층",tana7,
+	"타나토스 타워 상층부 8층",tana8,
+	"타나토스 타워 상층부 9층",tana9,
+	"타나토스 타워 상층부 10층",tana10,
+	"타나토스 타워 상층부 11층",tana11,
+	"타나토스 타워 상층부 12층",tana12,
+	"타나토스 타워 꼭대기",tana13,
+	"어비스 호수 지하 동굴 1층",abyss1,
+	"어비스 호수 지하 동굴 2층",abyss2,
+	"어비스 호수 지하 동굴 3층",abyss3,
+	"어비스 호수 지하 동굴 4층",abyss4,
+	"오딘 신전 1층",tdhels1,
+	"오딘 신전 2층",tdhels2,
+	"오딘 신전 3층",tdhels3,
+	"고대 오딘 신전 odin_past",tdhels_old,
+	"어비스 호수",abyssf,
+	"취소",LEnd;
+hugel_city:
+	warp "hugel.gat",82,151;
+	Zeny -= .@warpzeny; 
+	end;
+tana1:
+	warp "tha_t01.gat",150,39;
+	Zeny -= .@warpzeny; 
+	end;
+tana2:
+	warp "tha_t02.gat",150,129;
+	Zeny -= .@warpzeny; 
+	end;
+tana3:
+	warp "tha_t03.gat",59,135;
+	Zeny -= .@warpzeny; 
+	end;
+tana4:
+	warp "tha_t04.gat",60,141;
+	Zeny -= .@warpzeny; 
+	end;
+tana5:
+	warp "tha_t05.gat",61,160;
+	Zeny -= .@warpzeny; 
+	end;
+tana6:
+	warp "tha_t06.gat",207,6;
+	Zeny -= .@warpzeny; 
+	end;
+tana7:
+	warp "tha_t07.gat",28,166;
+	Zeny -= .@warpzeny; 
+	end;
+tana8:
+	warp "tha_t08.gat",28,44;
+	Zeny -= .@warpzeny; 
+	end;
+tana9:
+	warp "tha_t09.gat",89,146;
+	Zeny -= .@warpzeny; 
+	end;
+tana10:
+	warp "tha_t10.gat",167,138;
+	Zeny -= .@warpzeny; 
+	end;
+tana11:
+	warp "tha_t11.gat",89,36;
+	Zeny -= .@warpzeny; 
+	end;
+tana12:
+	warp "tha_t12.gat",129,52;
+	Zeny -= .@warpzeny; 
+	end;
+tana13:
+	warp "thana_boss.gat",141,218;
+	Zeny -= .@warpzeny; 
+	end;
+
+abyss1:
+	warp "abyss_01.gat",264,270;
+	Zeny -= .@warpzeny; 
+	end;
+abyss2:
+	warp "abyss_02.gat",275,270;
+	Zeny -= .@warpzeny; 
+	end;
+abyss3:
+	warp "abyss_03.gat",116,27;
+	Zeny -= .@warpzeny; 
+	end;
+abyss4:
+	warp "abyss_04.gat",178,153;
+	zeny -= .@warpzeny;
+	end;
+tdhels1:
+	warp "odin_tem01.gat",100,145;
+	Zeny -= .@warpzeny; 
+	end;
+tdhels2:
+	warp "odin_tem02.gat",28,180;
+	Zeny -= .@warpzeny; 
+	end;
+tdhels3:
+	warp "odin_tem03.gat",247,40;
+	Zeny -= .@warpzeny; 
+	end;
+tdhels_old:
+	warp "odin_past.gat",245,47;
+	Zeny -= .@warpzeny; 
+	end;
+abyssf:
+	warp "hu_fild05.gat",34,202;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+
+fkgpf1:
+
+menu	"신전 성역 1층",tlswjs1,
+	"신전 성역 2층",tlswjs2,
+	"신전 성역 3층",tlswjs3,
+	"신전 성역 4층",tlswjs4,
+	"신전 성역 5층",tlswjs5,
+	"얼음 동굴 1층",djfdma1,
+	"얼음 동굴 2층",djfdma2,
+	"얼음 동굴 3층",djfdma3,
+	"일루전 프로즌",djfdma3ill,
+	"오즈 협곡",fkgpff2,
+	"이다 평원",fkgpff3,
+	"아우둠라 초원",fkgpff4,
+	"아우둠라 초원",fkgpff1,
+	"취소",LEnd;
+fkgpf:
+	warp "rachel.gat",118,137;
+	Zeny -= .@warpzeny; 
+	end;
+tlswjs1:
+	warp "ra_san01.gat",235,235;
+	Zeny -= .@warpzeny; 
+	end;
+tlswjs2:
+	warp "ra_san02.gat",213,275;
+	Zeny -= .@warpzeny; 
+	end;
+tlswjs3:
+	warp "ra_san03.gat",10,149;
+	Zeny -= .@warpzeny; 
+	end;
+tlswjs4:
+	warp "ra_san04.gat",203,216;
+	Zeny -= .@warpzeny; 
+	end;
+tlswjs5:
+	warp "ra_san05.gat",14,149;
+	Zeny -= .@warpzeny; 
+	end;
+djfdma1:
+	warp "ice_dun01.gat",157,15;
+	Zeny -= .@warpzeny; 
+	end;
+djfdma2:
+	warp "ice_dun02.gat",151,139;
+	Zeny -= .@warpzeny; 
+	end;
+djfdma3:
+	warp "ice_dun03.gat",149,24;
+	Zeny -= .@warpzeny; 
+	end;
+djfdma3ill:
+	warp "ice_d03_i.gat",149,24;
+	Zeny -= .@warpzeny; 
+	end;
+
+fkgpff2:
+	warp "ra_fild02.gat",171,45;
+	Zeny -= .@warpzeny; 
+	end;
+fkgpff3:
+	warp "ra_fild03.gat",28,294;
+	Zeny -= .@warpzeny; 
+	end;
+fkgpff4:
+	warp "ra_fild04.gat",29,176;
+	Zeny -= .@warpzeny; 
+	end;
+fkgpff1:
+	warp "ra_fild01.gat",306,43;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWveins:
+
+menu	"토르 화산 던전 1층",thor1,
+	"토르 화산 던전 2층",thor2,
+	"토르 화산 던전 3층",thor3,
+	"토르 화산 비밀기지",thor4,
+	"베인스 필드",veinsf1,
+	"베인스 필드",veinsf2,	
+	"취소",LEnd;
+veins:
+	warp "veins.gat",224,115;
+	Zeny -= .@warpzeny; 
+	end;
+thor1:
+	warp "thor_v01.gat",21,226;
+	Zeny -= .@warpzeny; 
+	end;
+thor2:
+	warp "thor_v02.gat",74,205;
+	Zeny -= .@warpzeny; 
+	end;
+thor3:
+	warp "thor_v03.gat",31,272;
+	Zeny -= .@warpzeny; 
+	end;
+thor4:
+	warp "thor_camp.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+veinsf1:
+	warp "ve_fild01.gat",185,22;
+	Zeny -= .@warpzeny; 
+	end;
+veinsf2:
+	warp "ve_fild02.gat",76,133;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWwolf:
+
+menu	"회색 늑대의 숲 gw_fild01",wolffild1,
+	"회색 늑대의 숲 gw_fild02",wolffild2,
+	"오즈의 미로 1층 oz_dun01",ozdun1,
+	"오즈의 미로 2층 oz_dun02",ozdun2,
+	"취소",LEnd;
+
+wolfvill:
+	warp "wolfvill.gat",142,146;
+	Zeny -= .@warpzeny; 
+	end;
+wolffild1:
+	warp "gw_fild01.gat",136,19;
+	Zeny -= .@warpzeny; 
+	end;
+wolffild2:
+	warp "gw_fild02.gat",121,376;
+	Zeny -= .@warpzeny; 
+	end;
+ozdun1:
+	warp "oz_dun01.gat",283,177;
+	Zeny -= .@warpzeny; 
+	end;
+
+ozdun2:
+	warp "oz_dun02.gat",147,258;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+Nameless:
+
+menu	"무명섬",Nameless1,
+	"무명섬 던전 1층",Nameless2,
+	"무명섬 던전 2층",Nameless3,
+	"무명섬 던전 3층",Nameless4,
+	"취소", LEnd;
+
+Nameless1:
+	warp "nameless_n.gat",218,56;
+	Zeny -= .@warpzeny; 
+	end;
+Nameless2:
+	warp "abbey01.gat",323,97;
+	Zeny -= .@warpzeny; 
+	end;
+Nameless3:
+	warp "abbey02.gat",149,15;
+	Zeny -= .@warpzeny; 
+	end;
+Nameless4:
+	warp "abbey03.gat",121,10;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWgui:
+
+menu	"청림호수 던전",LWfgd,
+	"루이나 던전",LWagd,
+	"발키리렐름 던전",LWpgd,
+	"브리토리아 던전",LWggd,
+	"아루그나츠 던전",LWarugd,
+	"스쾨굴 던전",LWschgd,
+	"스쾨굴 성",LWschgd2,
+	"심연의 회랑 - 태고의 바람 gld2_pay",LWabyssgd,
+	"심연의 회랑 - 영웅의 눈물 gld2_ald",LWabyssgd2,
+	"심연의 회랑 - 전사의 길 gld2_prt",LWabyssgd3,
+	"심연의 회랑 - 망자의 언덕 gld2_gef",LWabyssgd4,
+	"취소", LEnd;
+
+LWfgd:
+	warp "gld_dun01.gat",120,23;
+	Zeny -= .@warpzeny; 
+	end;
+LWagd:
+	warp "gld_dun02.gat",25,160;
+	Zeny -= .@warpzeny; 
+	end;
+LWpgd:
+	warp "gld_dun03.gat",44,37;
+	Zeny -= .@warpzeny; 
+	end;
+LWggd:
+	warp "gld_dun04.gat",110,28;
+	Zeny -= .@warpzeny; 
+	end;
+LWarugd:
+	warp "arug_dun01.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+LWschgd:
+	warp "schg_dun01.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+LWschgd2:
+	warp "schg_cas04.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWabyssgd:
+	warp "gld2_pay.gat",175,225;
+	Zeny -= .@warpzeny; 
+	end;
+LWabyssgd2:
+	warp "gld2_ald.gat",80,64;
+	Zeny -= .@warpzeny; 
+	end;
+LWabyssgd3:
+	warp "gld2_prt.gat",94,17;
+	Zeny -= .@warpzeny; 
+	end;
+LWabyssgd4:
+	warp "gld2_gef.gat",118,49;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//초보자 지역
+LWeasy:
+
+menu	
+//	"초보자 수련장",LWnewbie,
+	"(1~10)프론테라필드06",LWchobo,
+//	"엘더 윌로우 밭",LWeld,
+//	"고블린 밭",LWgoblin,
+//	"고블린 마을",LWgoblinT,
+//	"게펜 필드 12",LWgefl12,
+//	"포이즌 스포아 밭",LWps,
+//	"세비지 밭",LWsavage,
+//	"어세신 길드",LWassassing,
+//	"묘르닐 산맥 9 V자 계곡",LWmjov,
+//	"묘르닐 산맥 10",LWoo5,
+//	"코모도 해변",LWoo13,
+	"취소",LEnd;
+LWnewbie:
+	warp "new_zone01.gat",50,111;
+//	Zeny -= .@warpzeny; 
+	end;
+LWchobo:
+	warp "prt_fild06.gat",0,0;
+//	Zeny -= .@warpzeny; 
+	end;
+LWeld:
+	warp "prt_fild10.gat",73,131;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWgoblin:
+	warp "prt_fild11.gat",297,282;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWgoblinT:
+	warp "gef_fild11.gat",124,357;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWgefl12:
+	warp "gef_fild12.gat",246,179;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWps:
+	warp "mjolnir_06.gat",353,106;
+	Zeny -= .@warpzeny; 
+	end;
+LWsavage:
+	warp "mjolnir_07.gat",156,22;
+	Zeny -= .@warpzeny; 
+	end;
+LWassassing:
+	warp "moc_fild16.gat",205,227;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWmjov:
+	warp "mjolnir_09.gat",200,359;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWoo5:
+	warp "mjolnir_10.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWoo13:
+	warp "cmd_fild07",0,0;
+	end;
+
+
+//워프 2ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+Warp2:
+
+menu
+	"프론테라 지역",LWprn,
+	"이즈루드 지역",LWizl,
+	"페이욘 지역",LWpay,
+	"모로크 지역",LWmor,
+	"게펜 지역",LWgef,
+	"고성 지역",LGle,
+	"알베르타 지역",LWalv,
+	"알데바란 지역",LWald,
+	"루티에 지역",LWxms,
+	"코모도 지역",LWcom,
+	"유노 지역",LWyun,
+	"아마쯔 지역",LWama,
+	"곤륜 지역",LWgon,
+	"움발라 지역",LWum,
+	"뤄양 지역",LWlou,
+	"니플헤임 지역",LWnif,
+	"아요타야 지역",ayothaya,
+	"아인브로크 지역",einbroch,
+	"코르 지역",cor,
+	"리히타르젠 지역",lighthalzen,
+	"휘겔 지역",hugel,
+	"라헬 지역",fkgpf1,
+	"베인스 지역",LWveins,
+	"회색 늑대 마을 지역",LWwolf,
+	"무명섬",Nameless,
+	"길드 던전",LWgui,
+	"차원의 균열 + 니드호그 지역",LWnyd,
+	"마누크 + 스플랑디드 지역",splman,
+	"엘 디카스테스 + 모라 + 에클라쥬 지역",LWdic,
+	"모스코비아 + 브라질리스 지역",LWmoskbra,
+	"데와타 + 말랑도 지역",LWdewmal,
+	"포트 말라야 + 락 릿지 지역",LWmalaya,
+	"라자냐 지역",LWlasa,
+	"바르문트 저택 지역",LWba,
+	"이스가르드 지역",LWIs,
+	"시간의 정원 지역",LWFor,
+	"취소",LEnd;
+
+
+//차원의 균열 + 니드호그 지역
+LWnyd:
+
+menu	"미드가르드 연합 주둔지",tmidcamp,
+	"난폭자의 상처 1층",nyddun1,
+	"난폭자의 상처 2층",nyddun2,
+	"니드호그의 둥지 1층",nyddun3,
+	"니드호그의 둥지 2층",nyddun4,
+	"마왕 모로크 필드 1",satanfi1,
+	"마왕 모로크 필드 2",satanfi3,
+	"마왕 모로크 필드 3",satanfi3,
+	"마왕 모로크 필드 3 캠프",satanfi3b,
+	"화염분지 moro_vol",moro_vol,
+	"취소",LEnd;
+
+tmidcamp:
+	warp "mid_camp.gat",210,283;
+	Zeny -= .@warpzeny; 
+	end;
+
+nyddun1:
+	warp "nyd_dun01.gat",61,221;
+	Zeny -= .@warpzeny; 
+	end;
+nyddun2:
+	warp "nyd_dun02.gat",92,191;
+	Zeny -= .@warpzeny; 
+	end;
+nyddun3:
+	warp "1@nyd.gat",295,255;
+	Zeny -= .@warpzeny; 
+	end;
+nyddun4:
+	warp "2@nyd.gat",199,328;
+	Zeny -= .@warpzeny; 
+	end;
+satanfi1:
+	warp "moc_fild20.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+satanfi2:
+	warp "moc_fild21.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+satanfi3:
+	warp "moc_fild22.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+satanfi3b:
+	warp "moc_fild22b.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+
+moro_vol:
+	warp "moro_vol.gat",111,97;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+splman:
+
+menu	"스플랑디드",tspl,
+	"스플랑디드 필드 1",spl01,
+	"스플랑디드 필드 2",spl02,
+	"스플랑디드 필드 3",spl03,
+	"마누크",tman,
+	"마누크 필드 1",man01,
+	"마누크 필드 2",man02,
+	"마누크 필드 3",man03,
+	"취소",LEnd;
+
+tspl:
+	warp "splendide.gat",198,146;
+	Zeny -= .@warpzeny; 
+	end;
+spl01:
+	warp "spl_fild01.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+spl02:
+	warp "spl_fild02.gat",16,242;
+	Zeny -= .@warpzeny; 
+	end;
+spl03:
+	warp "spl_fild03.gat",39,190;
+	Zeny -= .@warpzeny; 
+	end;
+tman:
+	warp "manuk.gat",283,230;
+	Zeny -= .@warpzeny; 
+	end;
+man01:
+	warp "man_fild01.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+man02:
+	warp "man_fild02.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+man03:
+	warp "man_fild03.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//엘 디카스테스 + 모라 + 에클라쥬 지역
+LWdic:
+
+menu	"엘 디카스테스",tdic,
+	"카미달 산기슭 1",dicfi1,
+	"카미달 산기슭 2",dicfi2,
+	"카미달 터널",dicdg1,
+	"스카라바 홀",dicdg2,
+	"나이트메어 스카라바 홀",dicdg3,
+	"비프로스트 남부 1",biffi1,
+	"비프로스트 남부 2",biffi2,
+	"안개 숲의 미궁",bifmist1,
+	"에클라쥬 마을 eclage",tecl,
+	"에클라쥬 내부 ecl_in01",tecl2,
+	"에클라쥬 필드 ecl_fild01",tecl3,
+	"비프로스트 탑 1층 ecl_tdun01",tecl4,
+	"비프로스트 탑 2층 ecl_tdun02",tecl5,
+	"비프로스트 탑 3층 ecl_tdun03",tecl6,
+	"비프로스트 탑 4층 ecl_tdun04",tecl7,
+	"취소",LEnd;
+
+tdic:
+	warp "dicastes01.gat",198,189;
+	Zeny -= .@warpzeny; 
+	end;
+dicfi1:
+	warp "dic_fild01.gat",150,276;
+	Zeny -= .@warpzeny; 
+	end;
+dicfi2:
+	warp "dic_fild02.gat",70,367;
+	Zeny -= .@warpzeny; 
+	end;
+dicdg1:
+	warp "dic_dun01.gat",368,44;
+	Zeny -= .@warpzeny; 
+	end;
+dicdg2:
+	warp "dic_dun02.gat",28,52;
+	Zeny -= .@warpzeny; 
+	end;
+dicdg3:
+	warp "dic_dun03.gat",28,52;
+	Zeny -= .@warpzeny; 
+	end;
+tmora:
+	warp "mora.gat",109,107;
+	Zeny -= .@warpzeny; 
+	end;
+biffi1:
+	warp "bif_fild01.gat",161,343;
+	Zeny -= .@warpzeny; 
+	end;
+biffi2:
+	warp "bif_fild02.gat",300,326;
+	Zeny -= .@warpzeny; 
+	end;
+bifmist1:
+	warp "1@mist.gat",322,134;
+	Zeny -= .@warpzeny; 
+	end;
+tecl:
+	warp "eclage.gat",111,38;
+	Zeny -= .@warpzeny; 
+	end;
+tecl2:
+	warp "ecl_in01.gat",48,57;
+	Zeny -= .@warpzeny; 
+	end;
+tecl3:
+	warp "ecl_fild01.gat",99,310;
+	Zeny -= .@warpzeny; 
+	end;
+tecl4:
+	warp "ecl_tdun01.gat",61,23;
+	Zeny -= .@warpzeny; 
+	end;
+tecl5:
+	warp "ecl_tdun02.gat",60,81;
+	Zeny -= .@warpzeny; 
+	end;
+tecl6:
+	warp "ecl_tdun03.gat",49,21;
+	Zeny -= .@warpzeny; 
+	end;
+tecl7:
+	warp "ecl_tdun04.gat",26,22;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//모스코비아 + 브라질리스 지역
+LWmoskbra:
+
+menu	"모스코비아",tmosk,
+	"모스코비아 필드",moskfi1,
+	"모스코비아 깊은 숲 1",moskdg1,
+	"모스코비아 깊은 숲 2",moskdg2,
+	"모스코비아 깊은 숲 3",moskdg3,
+	"브라질리스",tbra,
+	"브라질리스 필드",brafi1,
+	"브라질리스 던전 1층",bradg1,
+	"브라질리스 던전 2층",bradg2,
+	"취소",LEnd;
+tmosk:
+	warp "moscovia.gat",226,193;
+	Zeny -= .@warpzeny; 
+	end;
+moskfi1:
+	warp "mosk_fild02.gat",203,75;
+	Zeny -= .@warpzeny; 
+	end;
+moskdg1:
+	warp "mosk_dun01.gat",189,49;
+	Zeny -= .@warpzeny; 
+	end;
+moskdg2:
+	warp "mosk_dun02.gat",164,32;
+	Zeny -= .@warpzeny; 
+	end;
+moskdg3:
+	warp "mosk_dun03.gat",35,139;
+	Zeny -= .@warpzeny; 
+	end;
+tbra:
+	warp "brasilis.gat",194,215;
+	Zeny -= .@warpzeny; 
+	end;
+brafi1:
+	warp "bra_fild01.gat",85,32;
+	Zeny -= .@warpzeny; 
+	end;
+bradg1:
+	warp "bra_dun01.gat",131,46;
+	Zeny -= .@warpzeny; 
+	end;
+bradg2:
+	warp "bra_dun02.gat",262,259;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//데와타 + 말랑도 지역
+LWdewmal:
+
+menu	"데와타",tdew,
+	"데와타 필드",dewfi1,
+	"크라카토 화산섬",dewdg1,
+	"이스타나 동굴",dewdg2,
+	"말랑도",tmalang,
+	"별빛 산호 지대",maldg1,
+	"취소",LEnd;
+tdew:
+	warp "dewata.gat",199,178;
+	Zeny -= .@warpzeny; 
+	end;
+dewfi1:
+	warp "dew_fild01.gat",367,211;
+	Zeny -= .@warpzeny; 
+	end;
+dewdg1:
+	warp "dew_dun01.gat",285,160;
+	Zeny -= .@warpzeny; 
+	end;
+dewdg2:
+	warp "dew_dun02.gat",285,31;
+	Zeny -= .@warpzeny; 
+	end;
+tmalang:
+	warp "malangdo.gat",172,206;
+	Zeny -= .@warpzeny; 
+	end;
+maldg1:
+	warp "mal_dun01.gat",73,204;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//포트 말라야 +  락 릿지 지역
+LWmalaya:
+
+menu	"포트 말라야",tmalaya,
+	"포트 말라야 필드 ma_fild01",tmafi,
+	"포트 말라야 필드 ma_fild02",tmafi2,
+	"벙웅곳 병원 ma_dun01",tmadun,
+	"서부 마을 락 릿지 harboro1",trockrdg,
+	"서부 마을 락 릿지 harboro2",trockrdg2,
+	"락 릿지 키와와 사막 rockrdg1",trockrdg3,
+	"락 릿지 광산 rockmi1",trockrdgdun,
+	"취소",LEnd;
+tmalaya:
+	warp "malaya.gat",216,208;
+	Zeny -= .@warpzeny; 
+	end;
+tmafi:
+	warp "ma_fild01.gat",42,267;
+	Zeny -= .@warpzeny; 
+	end;
+tmafi2:
+	warp "ma_fild02.gat",248,41;
+	Zeny -= .@warpzeny; 
+	end;
+tmadun:
+	warp "ma_dun01.gat",39,116;
+	Zeny -= .@warpzeny; 
+	end;
+trockrdg:
+	warp "harboro1.gat",135,200;
+	Zeny -= .@warpzeny; 
+	end;
+trockrdg2:
+	warp "harboro2.gat",135,200;
+	Zeny -= .@warpzeny; 
+	end;
+trockrdg3:
+	warp "rockrdg1.gat",330,115;
+	Zeny -= .@warpzeny; 
+	end;
+trockrdgdun:
+	warp "rockmi1.gat",245,32;
+	Zeny -= .@warpzeny; 
+	end;
+	Zeny -= .@warpzeny; 
+	end;
+
+//라자냐 지역
+LWlasa:
+
+menu	"도람족 마을 라자냐 lasagna",tlasa,
+	"라자냐 필드 lasa_fild01",tlasa2,
+	"라자냐 필드 2 lasa_fild02",tlasa3,
+	"라자냐 던전 1층 lasa_dun01",tlasadun,
+	"라자냐 던전 2층 lasa_dun02",tlasadun2,
+	"라자냐 던전 3층 lasa_dun03",tlasadun3,
+	"라자냐 냐일굴 lasa_sea",tlasasea,
+	"취소",LEnd;
+tlasa:
+	warp "lasagna.gat",329,79;
+	Zeny -= .@warpzeny; 
+	end;
+tlasa2:
+	warp "lasa_fild01.gat",344,369;
+	Zeny -= .@warpzeny; 
+	end;
+tlasa3:
+	warp "lasa_fild02.gat",334,245;
+	Zeny -= .@warpzeny; 
+	end;
+tlasadun:
+	warp "lasa_dun01.gat",145,99;
+	Zeny -= .@warpzeny; 
+	end;
+tlasadun2:
+	warp "lasa_dun02.gat",107,130;
+	Zeny -= .@warpzeny; 
+	end;
+tlasadun3:
+	warp "lasa_dun03.gat",190,20;
+	Zeny -= .@warpzeny; 
+	end;
+tlasasea:
+	warp "lasa_sea.gat",22,144;
+	Zeny -= .@warpzeny; 
+	end;
+
+//바르문트의 저택 지역
+LWba:
+
+menu	"바르문트 저택 정원 ba_maison",tba_maison,
+	"저장고 타르타로스 상층 ba_2whs01",tba_2whs1,
+	"저장고 타르타로스 하층 ba_2whs02",tba_2whs2,
+	"대욕장 메디타티오 ba_bath",tba_bath,
+	"도서관 기억의 회랑 ba_lib",tba_lib,
+	"사육장 로스트밸리 ba_lost",tba_lost,
+	"하수처리장 ba_pw02",tba_pw2,
+	"제 1 마력발전소 ba_pw01",tba_pw1,
+	"제 2 마력발전소 ba_pw03",tba_pw3,
+	"취소",LEnd;
+tba_maison:
+	warp "ba_maison.gat",197,274;
+	Zeny -= .@warpzeny; 
+	end;
+tba_2whs1:
+	warp "ba_2whs01.gat",158,35;
+	Zeny -= .@warpzeny; 
+	end;
+tba_2whs2:
+	warp "ba_2whs02.gat",338,332;
+	Zeny -= .@warpzeny; 
+	end;
+tba_bath:
+	warp "ba_bath.gat",159,26;
+	Zeny -= .@warpzeny; 
+	end;
+tba_lib:
+	warp "ba_lib.gat",159,10;
+	Zeny -= .@warpzeny; 
+	end;
+tba_lost:
+	warp "ba_lost.gat",162,47;
+	Zeny -= .@warpzeny; 
+	end;
+tba_pw2:
+	warp "ba_pw02.gat",276,21;
+	Zeny -= .@warpzeny; 
+	end;
+tba_pw1:
+	warp "ba_pw01.gat",15,114;
+	Zeny -= .@warpzeny; 
+	end;
+tba_pw3:
+	warp "ba_pw03.gat",15,114;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//이스가르드 지역
+LWIs:
+
+menu	"얼음의 성 icecastle",ticecastle,
+	"얼어붙은 꼬리 jor_tail",tjor_tail,
+	"얼어붙은 비늘 언덕 jor_back1",tjor_back1,
+	"얼어붙은 비늘 평원 jor_back2",tjor_back2,
+	"얼어붙은 비늘 빙하 jor_back3",tjor_back3,
+	"얼어붙은 비늘 해변 jor_back4",tjor_back4,
+	"고대 얼음 협곡 동부 jor_back5",tjor_back5,
+	"고대 얼음 협곡 서부 jor_back6",tjor_back6,
+	"유빙 지대 jor_twice",tjor_twice,
+	"이스가르스 성소 작은 가지의 둥지 jor_twig",tjor_twig,
+	"뱀의 둥지 jor_nest",tjor_nest,
+	"뱀신의 온기 1층 jor_dun01",tjor_dun01,
+	"뱀신의 온기 2층 jor_dun02",tjor_dun02,
+	"버려진 구덩이 1층 jor_ab01",tjor_ab01,
+	"버려진 구덩이 2층 jor_ab02",tjor_ab02,
+	"뱀신의 뿌리 1층 jor_root1",tjor_root1,
+	"뱀신의 뿌리 2층 jor_root2",tjor_root2,
+	"깊은 뿌리 동굴 jor_root3",tjor_root3,
+	"성스러운 뿌리 jor_sanct",tjor_sanct,
+	"취소",LEnd;
+
+ticecastle:
+	warp "icecastle.gat",200,160;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_tail:
+	warp "jor_tail.gat",156,267;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_back1:
+	warp "jor_back1.gat",223,29;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_back2:
+	warp "jor_back2.gat",229,18;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_back3:
+	warp "jor_back3.gat",65,314;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_back4:
+	warp "jor_back4.gat",266,20;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_back5:
+	warp "jor_back5.gat",335,24;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_back6:
+	warp "jor_back6.gat",380,256;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_twice:
+	warp "jor_twice.gat",48,60;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_twig:
+	warp "jor_twig.gat",211,117;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_nest:
+	warp "jor_nest.gat",273,20;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_dun01:
+	warp "jor_dun01.gat",112,15;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_dun02:
+	warp "jor_dun02.gat",274,85;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_ab01:
+	warp "jor_ab01.gat",110,24;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_ab02:
+	warp "jor_ab02.gat",274,87;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_root1:
+	warp "jor_root1.gat",32,24;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_root2:
+	warp "jor_root2.gat",22,30;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_root3:
+	warp "jor_root3.gat",361,129;
+	Zeny -= .@warpzeny; 
+	end;
+tjor_sanct:
+	warp "jor_sanct.gat",149,239;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//시간의 정원 지역
+LWFor:
+
+
+menu	"시간의 정원",T_garden,
+	"잊혀진 시간 1구역",tfor_dun01,
+	"시간의 정원 2구역",tfor_dun02,
+	"취소",LEnd;
+T_garden:
+	warp "t_garden.gat",0,0;
+	zeny -= .@warpzeny;
+tfor_dun01:
+	warp "for_dun01.gat",0,0;
+	zeny -= .@warpzeny;
+	end;
+tfor_dun02:
+	warp "for_dun02.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+//워프 특수구역ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+Warp3:
+
+
+
+menu	"공성전 + 전장 + 투기장",LWguildvs,
+	"메모리얼 던전",LWmemo,
+	"취소",LEnd;
+
+//공성전 + GVG + 전장
+LWguildvs:
+
+menu	"게펜 - 브리토리아",gbri,
+	"프론테라 - 발키리 렐름",gval,
+	"페이욘 - 청림호수",gchu,
+	"알데바란 - 루이나",glu,
+	"유노 - 스쾨굴",gschg,
+	"라헬 - 아루그나츠",garug,
+	"전장 - 각개전투",batg1,
+	"전장 - 진영전",batg2,
+	"PVP - 게펜 1@gef",tpvgef,
+	"PVP - 이즈루드 pvp_y_1-2",tpvizu,
+	"PVP - 길드 대전실 2 guilz_vs2",tpvg2,
+	"프론테라 훈련소",DPS;
+gbri:
+	warp "gef_fild13.gat",190,275;
+	Zeny -= .@warpzeny;
+	end;
+gval:
+	warp "prt_gld.gat",153,131;
+	Zeny -= .@warpzeny; 
+	end;
+gchu:
+	warp "pay_gld.gat",195,266;
+	Zeny -= .@warpzeny; 
+	end;
+glu:
+	warp "alde_gld.gat",236,253;
+	Zeny -= .@warpzeny; 
+	end;
+gschg:
+	warp "sch_gld.gat",288,245;
+	Zeny -= .@warpzeny; 
+	end;
+garug:
+	warp "aru_gld.gat",69,170;
+	Zeny -= .@warpzeny; 
+	end;
+batg1:
+	warp "bat_b01.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+batg2:
+	warp "bat_b02.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+tpvgef:
+	warp "1@gef.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+tpvizu:
+	warp "pvp_y_1-2.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+
+tpvg2:
+	warp "guild_vs2.gat",0,0;
+	Zeny -= .@warpzeny; 
+	end;
+DPS:
+	warp "tra_fild.gat",103,171;
+//	Zeny -= .@warpzeny; 
+	end;
+
+
+//메모리얼 던전
+
+LWmemo:
+
+menu	"포링마을",LWmemoporing,
+	"오크의 기억",LWmemoorc,
+	"니드호그의 둥지",LWmemonest,
+	"봉인된 신전",LWmemotemple,
+	"엔들레스 타워",LWmemoendless,
+	"문어 동굴",LWmemotaco,
+	"배수로",LWmemopump,
+	"게펜 마법 대회",LWmemogef,
+	"사라의 기억",LWmemosara,
+	"펜릴과 사라",LWmemofenrirandsarah,
+	"페이스웜의 둥지",LWmemofaceworm,
+	"금요 메모리얼",LWmemofriday,
+	"무한의 공간",LWmemoinfi,
+	"하트 헌터 기지 외곽",LWmemohearthunt,
+	"지터벅의 악몽 (꿈과 그림자)",LWmemodream,
+	"망령의 왕국",LWmemoghostpalace,
+	"비공정 습격",LWmemoairship,
+	"위기의 찰스턴",LWmemochal,
+	"벙웅곳 병원",LWmemohospital,
+	"부워여 동굴",LWmemobuyawa,
+	"버코너워 호수",LWmemobakonawa,
+	"호러 장난감 공장",LWmemohorrortoy,
+	"공중 요새 침공",LWmemoskyfortress,
+	"비오스의 섬",LWmemobios,
+	"모르스의 동굴",LWmemomorse,
+	"에클라쥬 내부",LWmemoeclage,
+	"안개 숲의 미궁",LWmemofogmaze,
+	"마지막 방",LWmemolastroom,
+	"마신의 탑",LWmemosatan,
+	"마신전",LWmemosatantemple,
+	"옛 고성",LWmemooldglast,
+	"옛 고성 도전모드",LWmemooldglast2,
+	"EDDA 글래스트 헤임의 몰락",LWmemoEDDAglast,
+	"중앙 실험실",LWmemocentrallabo,
+	"보르세브 연구실",LWmemowolfchev,
+	"취소",LEnd;
+
+
+LWmemoporing:
+	warp "prt_fild05",144,234;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemoorc:
+	warp "gef_fild10",240,198;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemonest:
+	warp "nyd_dun02",94,190;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWmemotemple:
+	warp "monk_test",306,143;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemoendless:
+	warp "e_tower",70,114;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemotaco:
+	warp "mal_dun01",152,230;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemopump:
+	warp "mal_in01",164,21;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemogef:
+	warp "dali",93,141;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemosara:
+	warp "dali",130,106;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemofenrirandsarah:
+	warp "dali02",96,142;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemofaceworm:
+	warp "dali",83,63;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemofriday:
+	warp "1@md_gef",106,134;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemoinfi:
+	warp "cmd_fild07",55,275;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemohearthunt:
+	warp "1@swat",41,66;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemodream:
+	warp "moc_para01",26,89;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemoghostpalace:
+	warp "dali02",43,128;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWmemoairship:
+	warp "dali02",133,81;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemochal:
+	warp "verus04",78,116;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemohospital:
+	warp "ma_dun01",151,8;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemobuyawa:
+	warp "ma_fild02",316,317;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemobakonawa:
+	warp "ma_scene01",172,175;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemohorrortoy:
+	warp "xmas",237,303;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemoskyfortress:
+	warp "prt_q",248,79;
+	Zeny -= .@warpzeny; 
+	end;
+LWmemobios:
+	warp "moro_cav",50,65;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemomorse:
+	warp "moro_cav",61,68;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemoeclage:
+	warp "ecl_hub01",132,11;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemofogmaze:
+	warp "bif_fild01",158,340;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemolastroom:
+	warp "un_myst",163,37;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemosatan:
+	warp "dali02",134,119;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemosatantemple:
+	warp "moro_vol",110,90;
+	Zeny -= .@warpzeny; 
+	end;
+
+
+LWmemooldglast:
+	warp "glast_01",204,268;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemooldglast2:
+	warp "glast_01",141,291;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemoEDDAglast:
+	warp "1@gl_prq",300,21;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemocentrallabo:
+	warp "verus01",153,155;
+	Zeny -= .@warpzeny; 
+	end;
+
+LWmemowolfchev:
+	warp "lhz_dun04",148,269;
+	Zeny -= .@warpzeny; 
+	end;
+
+Warp4:
+	
+menu	"초보자 지역",LWeasy,
+	"취소",LEnd;
+
+//마침
+LEnd:
+
+	mes "[텔레포트]";
+	mes "언제라도 이용해 주세요.";
+	close;
+
+	end;
+
+
+//채팅방
+Oninit:
+	waitingroom "텔레포터",0;
+	end;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//워프npc 복사
+//맨 오른쪽 숫자가 npc의 외형을 결정합니다
+//https://nn.ai4rei.net/dev/npclist/?qq=8
+//이 사이트에서 원하는 모습을 찾아 번호를 넣으면 됩니다
+
+prontera,162,189,5	duplicate(Tele)	텔레포터#텔레포터_프론테라	82
+izlude,122,150,5	duplicate(Tele)	텔레포터#텔레포터_이즈루드	82
+payon,168,108,5	duplicate(Tele)	텔레포터#텔레포터_페이욘	82
+morocc,152,105,5	duplicate(Tele)	텔레포터#텔레포터_모로크	82
+geffen,113,64,5	duplicate(Tele)	텔레포터#텔레포터_게펜	82
+alberta,117,68,4	duplicate(Tele)	텔레포터#텔레포터_알베르타	82
+comodo,182,150,5	duplicate(Tele)	텔레포터#텔레포터_코모도	82
+aldebaran,148,115,4	duplicate(Tele)	텔레포터#텔레포터_알데바란	82
+xmas,142,136,5	duplicate(Tele)	텔레포터#텔레포터_루티에	82
+niflheim,201,185,4	duplicate(Tele)	텔레포터#텔레포터_니플헤임	82
+yuno,149,205,5	duplicate(Tele)	텔레포터#텔레포터_유노	82
+amatsu,106,164,5	duplicate(Tele)	텔레포터#텔레포터_아마쯔	82
+gonryun,153,126,5	duplicate(Tele)	텔레포터#텔레포터_쿤룬	82
+umbala,107,160,4	duplicate(Tele)	텔레포터#텔레포터_움발라	82
+louyang,107,205,4	duplicate(Tele)	텔레포터#텔레포터_뤄양	82
+ayothaya,202,201,5	duplicate(Tele)	텔레포터#텔레포터_아요타야	82
+einbroch,69,208,4	duplicate(Tele)	텔레포터#텔레포터_아인브로크	82
+einbech,107,171,4	duplicate(Tele)	텔레포터#텔레포터_아인베흐	82
+lighthalzen,162,107,4	duplicate(Tele)	텔레포터#텔레포터_리히타르젠	82
+
+veins,230,103,9	duplicate(Tele)	텔레포터#텔레포터_베인스	82
+hugel,74,160,5	duplicate(Tele)	텔레포터#텔레포터_라헬	82
+rachel,105,138,5	duplicate(Tele)	텔레포터#텔레포터_휘겔	82
+moscovia,217,191,5	duplicate(Tele)	텔레포터#텔레포터_모스코비아	82
+brasilis,196,222,4	duplicate(Tele)	텔레포터#텔레포터_브라질리스	82
+dewata,195,186,5	duplicate(Tele)	텔레포터#텔레포터_데와타	82
+splendide,193,153,5	duplicate(Tele)	텔레포터#텔레포터_스플랑디드	82
+manuk,279,235,5	duplicate(Tele)	텔레포터#텔레포터_마누크	82
+dicastes01,198,193,4	duplicate(Tele)	텔레포터#텔레포터_디카스테스	82
+mora,107,118,5	duplicate(Tele)	텔레포터#텔레포터_모라	82
+
+
+cmd_in02,176,106,5	duplicate(Tele)	텔레포터#텔레포터_코모도카지노	82

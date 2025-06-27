@@ -133,7 +133,7 @@ Body:
         StealProtected: true
   - Id: 1002
     AegisName: PORING
-    Name: Poring
+    Name: 포링
     Level: 1
     Hp: 50
     BaseExp: 2
@@ -196,7 +196,7 @@ Body:
 #    AttackMotion: 512
   - Id: 1004
     AegisName: HORNET
-    Name: Hornet
+    Name: 호넷
     Level: 8
     Hp: 169
     BaseExp: 19

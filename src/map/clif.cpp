@@ -1034,6 +1034,71 @@ static int32 clif_setlevel(struct block_list* bl) {
 	}
 	return lv;
 }
+/*==========================================
+ * Gets guild ID for emblem display purposes only
+ *------------------------------------------*/
+static int32 clif_get_guild_id_for_emblem(struct block_list* bl) {
+	nullpo_ret(bl);
+	switch (bl->type) {
+	case BL_PC:
+		if (battle_config.show_guild_emblem & BL_PC)
+			return ((TBL_PC*)bl)->status.guild_id;
+		break;
+	case BL_PET:
+		if ((battle_config.show_guild_emblem & BL_PET) && ((TBL_PET*)bl)->master)
+			return ((TBL_PET*)bl)->master->status.guild_id;
+		break;
+	case BL_HOM:
+		if ((battle_config.show_guild_emblem & BL_HOM) && ((TBL_HOM*)bl)->master)
+			return ((TBL_HOM*)bl)->master->status.guild_id;
+		break;
+	case BL_MER:
+		if ((battle_config.show_guild_emblem & BL_MER) && ((TBL_MER*)bl)->master)
+			return ((TBL_MER*)bl)->master->status.guild_id;
+		break;
+	case BL_ELEM:
+		if ((battle_config.show_guild_emblem & BL_ELEM) && ((TBL_ELEM*)bl)->master)
+			return ((TBL_ELEM*)bl)->master->status.guild_id;
+		break;
+	default:
+		// For MOB, NPC, SKILL etc., use the original function
+		return status_get_guild_id(bl);
+	}
+	return 0;
+}
+
+/*==========================================
+ * Gets emblem ID for emblem display purposes only
+ *------------------------------------------*/
+static int32 clif_get_emblem_id_for_emblem(struct block_list* bl) {
+	nullpo_ret(bl);
+	switch (bl->type) {
+	case BL_PC:
+		if (battle_config.show_guild_emblem & BL_PC)
+			return ((TBL_PC*)bl)->guild_emblem_id;
+		break;
+	case BL_PET:
+		if ((battle_config.show_guild_emblem & BL_PET) && ((TBL_PET*)bl)->master)
+			return ((TBL_PET*)bl)->master->guild_emblem_id;
+		break;
+	case BL_HOM:
+		if ((battle_config.show_guild_emblem & BL_HOM) && ((TBL_HOM*)bl)->master)
+			return ((TBL_HOM*)bl)->master->guild_emblem_id;
+		break;
+	case BL_MER:
+		if ((battle_config.show_guild_emblem & BL_MER) && ((TBL_MER*)bl)->master)
+			return ((TBL_MER*)bl)->master->guild_emblem_id;
+		break;
+	case BL_ELEM:
+		if ((battle_config.show_guild_emblem & BL_ELEM) && ((TBL_ELEM*)bl)->master)
+			return ((TBL_ELEM*)bl)->master->guild_emblem_id;
+		break;
+	default:
+		// For MOB, NPC, SKILL etc., use the original function
+		return status_get_emblem_id(bl);
+	}
+	return 0;
+}
 
 /*==========================================
  * Prepares 'unit standing/spawning' packet
@@ -1044,7 +1109,7 @@ static void clif_set_unit_idle( struct block_list* bl, bool walking, send_target
 	map_session_data* sd = BL_CAST( BL_PC, bl );
 	status_change* sc = status_get_sc( bl );
 	struct view_data* vd = status_get_viewdata( bl );
-	int32 g_id = status_get_guild_id( bl );
+	int32 g_id = clif_get_guild_id_for_emblem(bl);
 
 #if PACKETVER < 20091103
 	if( !pcdb_checkid( vd->class_ ) ){
@@ -1077,7 +1142,7 @@ static void clif_set_unit_idle( struct block_list* bl, bool walking, send_target
 		p.bodypalette = vd->cloth_color;
 		p.headDir = ( sd )? sd->head_dir : 0;
 		p.GUID = g_id;
-		p.GEmblemVer = status_get_emblem_id( bl );
+		p.GEmblemVer = clif_get_emblem_id_for_emblem(bl);
 		p.honor = ( sd ) ? sd->status.manner : 0;
 		p.virtue = ( sc ) ? sc->opt3 : 0;
 		p.isPKModeON = ( sd && sd->status.karma ) ? 1 : 0;
@@ -1149,7 +1214,7 @@ static void clif_set_unit_idle( struct block_list* bl, bool walking, send_target
 	p.robe = vd->look[LOOK_ROBE];
 #endif
 	p.GUID = g_id;
-	p.GEmblemVer = status_get_emblem_id( bl );
+	p.GEmblemVer = clif_get_emblem_id_for_emblem(bl);
 	p.honor = (sd) ? sd->status.manner : 0;
 	p.virtue = (sc) ? sc->opt3 : 0;
 	p.isPKModeON = (sd && sd->status.karma) ? 1 : 0;
@@ -1209,7 +1274,7 @@ static void clif_spawn_unit( struct block_list *bl, enum send_target target ){
 	map_session_data* sd = BL_CAST( BL_PC, bl );
 	status_change* sc = status_get_sc( bl );
 	struct view_data* vd = status_get_viewdata( bl );
-	int32 g_id = status_get_guild_id( bl );
+	int32 g_id = clif_get_guild_id_for_emblem(bl);
 
 #if PACKETVER < 20091103
 	if( !pcdb_checkid( vd->class_ ) ){
@@ -1291,7 +1356,7 @@ static void clif_spawn_unit( struct block_list *bl, enum send_target target ){
 	p.robe = vd->look[LOOK_ROBE];
 #endif
 	p.GUID = g_id;
-	p.GEmblemVer = status_get_emblem_id( bl );
+	p.GEmblemVer = clif_get_emblem_id_for_emblem(bl);
 	p.honor = (sd) ? sd->status.manner : 0;
 	p.virtue = (sc) ? sc->opt3 : 0;
 	p.isPKModeON = (sd && sd->status.karma) ? 1 : 0;
@@ -1392,8 +1457,8 @@ static void clif_set_unit_walking( struct block_list& bl, map_session_data* tsd,
 #if PACKETVER >= 20101124
 	p.robe = vd->look[LOOK_ROBE];
 #endif
-	p.GUID = status_get_guild_id( &bl );
-	p.GEmblemVer = status_get_emblem_id( &bl );
+	p.GUID = clif_get_guild_id_for_emblem(&bl);
+	p.GEmblemVer = clif_get_emblem_id_for_emblem(&bl);
 	p.honor = (sd) ? sd->status.manner : 0;
 	p.virtue = (sc) ? sc->opt3 : 0;
 	p.isPKModeON = (sd && sd->status.karma) ? 1 : 0;
@@ -4038,10 +4103,11 @@ void clif_changelook(struct block_list *bl, int32 type, int32 val) {
 #if PACKETVER < 20150513
 				return;
 #else
+#if PACKETVER_MAIN_NUM < 20231220
 				if( val != 0 && sc != nullptr && sc->option&OPTION_COSTUME ){
  					val = 0;
 				}
-
+#endif
  				vd->look[LOOK_BODY2] = val;
 #endif
 				break;
@@ -8977,8 +9043,8 @@ void clif_guild_emblem_area(struct block_list* bl)
 	PACKET_ZC_CHANGE_GUILD p{};
 
 	p.packetType = HEADER_ZC_CHANGE_GUILD;
-	p.guild_id = status_get_guild_id(bl);
-	p.emblem_id = status_get_emblem_id(bl);
+	p.guild_id = clif_get_guild_id_for_emblem(bl);
+	p.emblem_id = clif_get_emblem_id_for_emblem(bl);
 	p.AID = bl->id;
 
 	clif_send(&p, sizeof(p), bl, AREA);
@@ -11020,6 +11086,9 @@ void clif_parse_LoadEndAck(int32 fd,map_session_data *sd)
 			channel_mjoin(sd); //join new map
 
 		clif_pk_mode_message(sd);
+
+		// Update the client
+		clif_goldpc_info(*sd);
 	}
 	
 	if( sd->guild && ( battle_config.guild_notice_changemap == 2 || guild_notice ) ){
@@ -22767,7 +22836,7 @@ bool clif_parse_stylist_buy_sub( map_session_data* sd, _look look, int16 index )
 
 	std::shared_ptr<s_stylist_costs> costs;
 
-	if( ( sd->class_ & MAPID_BASEMASK ) == MAPID_SUMMONER ){
+	if ((sd->class_ & MAPID_BASEMASK) == MAPID_SUMMONER || (sd->class_ & MAPID_BASEMASK) == MAPID_SPIRIT_HANDLER) {
 		costs = entry->doram;
 	}else{
 		costs = entry->human;
@@ -25467,6 +25536,71 @@ void clif_set_npc_window_pos_percent(map_session_data& sd, int32 x, int32 y)
 
 	clif_send( &p, sizeof( p ), &sd, SELF );
 #endif  // PACKETVER_MAIN_NUM >= 20220504
+}
+
+void clif_goldpc_info(map_session_data& sd) {
+#if PACKETVER_MAIN_NUM >= 20140508 || PACKETVER_RE_NUM >= 20140508 || defined(PACKETVER_ZERO)
+	const static int32 client_max_seconds = 3600;
+
+	if (battle_config.feature_goldpc_active) {
+			struct PACKET_ZC_GOLDPCCAFE_POINT p = {};
+
+			p.PacketType = HEADER_ZC_GOLDPCCAFE_POINT;
+			p.isActive = true;
+			if (battle_config.feature_goldpc_vip && pc_isvip(&sd)) {
+					p.mode = 2;
+			} else {
+					p.mode = 1;
+			}
+			p.point = (int32)pc_readparam(&sd, SP_GOLDPC_POINTS);
+			if (sd.goldpc_tid != INVALID_TIMER) {
+					const struct TimerData* td = get_timer(sd.goldpc_tid);
+
+					if (td != nullptr) {
+							// Get the remaining milliseconds until the next reward
+							t_tick remaining = td->tick - gettick();
+
+							// Always round up to full second
+							remaining += (remaining % 1000);
+
+							p.playedTime = (int32)(client_max_seconds - (remaining / 1000));
+					} else {
+							p.playedTime = 0;
+					}
+			} else {
+					p.playedTime = client_max_seconds;
+			}
+
+			clif_send(&p, sizeof(p), &sd, SELF);
+		}
+#endif
+}
+
+void clif_parse_dynamic_npc(int fd, map_session_data* sd) {
+#if PACKETVER_MAIN_NUM >= 20140430 || PACKETVER_RE_NUM >= 20140430 || defined(PACKETVER_ZERO)
+	struct PACKET_CZ_DYNAMICNPC_CREATE_REQUEST* p = (struct PACKET_CZ_DYNAMICNPC_CREATE_REQUEST*)RFIFOP(fd, 0);
+
+	char npcname[NPC_NAME_LENGTH + 1];
+
+	if (strncasecmp("GOLDPCCAFE", p->name, sizeof(p->name)) == 0) {
+		safestrncpy(npcname, p->name, sizeof(npcname));
+	}
+	else {
+		return;
+	}
+
+	struct npc_data* nd = npc_name2id(npcname);
+
+	if (nd == nullptr) {
+		ShowError("clif_parse_dynamic_npc: Original NPC \"%s\" was not found.\n", npcname);
+		clif_dynamicnpc_result(*sd, DYNAMICNPC_RESULT_UNKNOWNNPC);
+		return;
+	}
+
+	if (npc_duplicate_npc_for_player(*nd, *sd) != nullptr) {
+		clif_dynamicnpc_result(*sd, DYNAMICNPC_RESULT_SUCCESS);
+	}
+#endif
 }
 
 /// Displays a special popup.

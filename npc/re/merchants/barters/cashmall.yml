@@ -627,215 +627,215 @@ Body:
   - Name: CachuaCoupon06
     Items:
       - Index: 0
-        Item: Thanos_Refine_Hammer
+        Item: Thanos_Refine_Hammer # 개조된 타노스 제련 망치
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 20
       - Index: 1
-        Item: Thanos_Upgrade_Box
+        Item: Thanos_Upgrade_Box # 타노스 업그레이드 상자
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 30
       - Index: 2
-        Item: Hero_Weapon_Up_Box_1
+        Item: Adulter_Weapon_Up_Box # 아둘테르 무기 개조 상자
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 100
       - Index: 3
-        Item: Hero_Weapon_Up_Box_2
+        Item: Aegis_102213 # 영웅의 무기 개조 선택 상자
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 100
       - Index: 4
-        Item: Hero_Weapon_Up_Box_3
+        Item: Aegis_102214 # 개조된 영웅의 무기 제련망치 S
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 100
+            Amount: 50
       - Index: 5
-        Item: Hero_Weapon_Up_Box_4
+        Item: Hero_Weapon_S_Box_1 # 고대 영웅의 무구 선택상자 I 
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 100
+            Amount: 10
       - Index: 6
-        Item: Hero_Weapon_Up_Box_5
+        Item: Hero_Weapon_S_Box_2 # 고대 영웅의 무구 선택상자 II 
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 100
+            Amount: 10
       - Index: 7
-        Item: Hero_Weapon_Up_Box_6
+        Item: Hero_Weapon_S_Box_3 # 고대 영웅의 무구 선택상자 III
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 100
+            Amount: 10
       - Index: 8
-        Item: Adulter_Weapon_Up_Box
+        Item: Hero_Weapon_S_Box_4 # 고대 영웅의 무구 선택상자 IV
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 100
+            Amount: 10
       - Index: 9
-        Item: Hero_Weapon_Hammer_1
+        Item: Hero_Weapon_S_Box_5 # 고대 영웅의 무구 선택상자 V
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 50
+            Amount: 10
       - Index: 10
-        Item: Hero_Weapon_Hammer_2
+        Item: Hero_Weapon_S_Box_6 # 고대 영웅의 무구 선택상자 VI
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 50
+            Amount: 10
       - Index: 11
-        Item: Hero_Weapon_Hammer_3
+        Item: Hero_Weapon_S_Box_7 # 고대 영웅의 무구 선택상자 VII
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 50
+            Amount: 10
       - Index: 12
-        Item: Hero_Weapon_Hammer_4
+        Item: Hero_Up_Cube_11 # +11 고대 영웅무구 개방 큐브
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 50
+            Amount: 25
       - Index: 13
-        Item: Hero_Weapon_Hammer_5
+        Item: OS_Helm_Hammer # OS 업그레이드 투구 제련망치
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 50
       - Index: 14
-        Item: Hero_Weapon_Hammer_6
+        Item: OS_Weapon_Hammer # OS 업그레이드 투구 제련망치
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 50
-      # - Index: 15
-        # Item: OS_Helm_Hammer
-        # RequiredItems:
-          # - Index: 0
-            # Item: Cachua_Coupon
-            # Amount: 50
-      # - Index: 16
-        # Item: OS_Weapon_Hammer
-        # RequiredItems:
-          # - Index: 0
-            # Item: Cachua_Coupon
-            # Amount: 50
+      - Index: 15
+        Item: Poenitentia_Hammer # 페니텐티아 무기 제련망치
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 50
+      - Index: 16
+        Item: Barmund_Hammer # 바르문트 방어구 제련망치
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 50
       - Index: 17
-        Item: Poenitentia_Hammer
+        Item: Special_Hat_Hammer # 특별한 모자용 제련망치
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 50
       - Index: 18
-        Item: Barmund_Hammer
+        Item: Vivatus_Weapon_Hammer # 비바투스 무기 제련망치
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 50
       - Index: 19
-        Item: Special_Hat_Hammer
+        Item: Helm_Of_Faith_Hammer # 헬름 오브 페이스 제련망치
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 50
       - Index: 20
-        Item: Vivatus_Weapon_Hammer
+        Item: Clock_Tower_W_Hammer # 시계탑 지하층 장비 제련망치
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 50
       - Index: 21
-        Item: Bio_Helm_Refine_Cube
+        Item: aegis_102216 # 11제련 선택 큐브
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 75
       - Index: 22
-        Item: Circlet_Refine_Cube
+        Item: aegis_102215 # 12제련 선택 큐브
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 75
       - Index: 23
-        Item: Bio_Weapon_Refine_Cube
+        Item: Blacksmith_Bless_Box_3 # 대장장이의 축복 3개 상자
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 75
+            Amount: 20
       - Index: 24
-        Item: Auto_Armor_Refine_Cube
+        Item: Shadow_Hammer_Box_3 # 홀그렌의 쉐도우 제련망치 3개 상자
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 75
+            Amount: 20
       - Index: 25
-        Item: Old_Refine_Cube
-        RequiredItems:
-          - Index: 0
-            Item: Cachua_Coupon
-            Amount: 75
-      - Index: 26
-        Item: Geffen_Refine_Cube
-        RequiredItems:
-          - Index: 0
-            Item: Cachua_Coupon
-            Amount: 75
-      - Index: 27
-        Item: Temporal_Refine_Cube
-        RequiredItems:
-          - Index: 0
-            Item: Cachua_Coupon
-            Amount: 75
-      - Index: 28
-        Item: OS_Weapon_Refine_Cube
-        RequiredItems:
-          - Index: 0
-            Item: Cachua_Coupon
-            Amount: 75
-      - Index: 29
-        Item: Racecap_Refine_Cube
-        RequiredItems:
-          - Index: 0
-            Item: Cachua_Coupon
-            Amount: 75
-      - Index: 30
-        Item: Blacksmith_Bless_Box_3
-        RequiredItems:
-          - Index: 0
-            Item: Cachua_Coupon
-            Amount: 20
-      - Index: 31
-        Item: Shadow_Hammer_Box_3
-        RequiredItems:
-          - Index: 0
-            Item: Cachua_Coupon
-            Amount: 20
-      - Index: 32
-        Item: Sillit_Pong_Box
+        Item: Sillit_Pong_Box # 실릿 퐁 상자
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 200
-      - Index: 33
-        Item: Shadow_Exchange_Ticket
+      - Index: 26
+        Item: Shadow_Exchange_Ticket # 쉐도우 교환 티켓
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 50
-      # - Index: 34
-        # Item: aegis_101399
-        # RequiredItems:
-          # - Index: 0
-            # Item: Cachua_Coupon
-            # Amount: 100
+      - Index: 27
+        Item: Enchant_Ticket_3 # 인챈트 티켓 봉투
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 100
+      - Index: 28
+        Item: FateSin_Boots_Hammer # 선악의 부츠 제련망치
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 50
+      - Index: 29
+        Item: Isgard_Crown_Hammer # 이스가르드 크라운 제련망치
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 50
+      - Index: 30
+        Item: GoodnEvil_Helm_Hammer # 선악의 관 제련망치
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 50
+      - Index: 31
+        Item: Justice_Weapon_Hammer # 선의 무기 제련망치
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 50
+      - Index: 32
+        Item: Injustice_Weapon_Hammer # 악의 무기 제련망치
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 50
+      - Index: 33
+        Item: S_Enchant_Essence_Box_3 # 쉐도우 에센스 3개 상자
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 20
+      - Index: 34
+        Item: Brown_Dia_Box # 골든 다이아몬드 15개 상자
+        RequiredItems:
+          - Index: 0
+            Item: Cachua_Coupon
+            Amount: 10
   - Name: CachuaCoupon07
     Items:
       - Index: 0
@@ -929,17 +929,17 @@ Body:
             Item: Cachua_Coupon
             Amount: 75
       - Index: 15
-        Item: ReloadShadow_Mix
+        Item: ReloadShadow_Mix 
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
             Amount: 75
       - Index: 16
-        Item: SpellCasterShadow_Mix
+        Item: SpellCasterShadow_Mix # 스펠 캐스터 쉐도우 뚝딱상자
         RequiredItems:
           - Index: 0
             Item: Cachua_Coupon
-            Amount: 75
+            Amount: 75     
   - Name: CachuaCoupon08
     Items:
       - Index: 0
@@ -1760,3 +1760,383 @@ Body:
         RequiredItems:
           - Index: 0
             Item: aegis_1001810
+
+#  냐롬 냥다래 Exchanges
+  - Name: Nyarom_Nyangvine
+    Items:
+      - Index: 0
+        Item: Gunslinger_Enchant
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 1
+        Item: Fan_Upgrade_Kit
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 2
+        Item: Suit_Upgrade_Kit
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 3
+        Item: Candy_Bag_Scroll_Melee
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 4
+        Item: Candy_Bag_Scroll_Range
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 5
+        Item: Candy_Bag_Scroll_Magic
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 6
+        Item: Booster_Amplifier
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 7
+        Item: Magical_Cat_Hand
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 8
+        Item: Silver_Statue
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 9
+        Item: Gold_Statue
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 10
+        Item: Cursed_Blood
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 1
+      - Index: 11
+        Item: Time_Unseal_Key
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 12
+        Item: Gemstone_Of_Time
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 13
+        Item: Joy_Of_Victory
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 14
+        Item: Overclocker
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 15
+        Item: PendantStoneForWork
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 1
+      - Index: 16
+        Item: Dark_Stone
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 17
+        Item: EXP_Overclocker
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 18
+        Item: Hero_LT_Refine_Melee
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 30
+      - Index: 19
+        Item: Hero_LT_Refine_Magic
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 30
+      - Index: 20
+        Item: Lens_Craft_Stone
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 21
+        Item: Loki_Advice
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 22
+        Item: Loki_Coin
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 23
+        Item: Loki_Advice_2
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 24
+        Item: Loki_Coin_2
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 25
+        Item: Loki_Advice_3 # 로키의 조언(원거리물리)
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 26
+        Item: Loki_Coin_3 # 로키의 검정색 동전
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 27
+        Item: Fan_Upgrade_Kit_EX # 선풍키 개조 키트EX
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 28
+        Item: Loki_Advice_4 # 로키의 조언(방어)
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+      - Index: 29
+        Item: Loki_Coin_4 # 로키의 황금색 동전
+        RequiredItems:
+          - Index: 0
+            Item: Nyangvine_Fruit
+            Amount: 2
+ 
+
+#  위대한 영웅 냐롬 Exchanges
+
+  - Name: Nyarom_Great_Hero
+    Items:
+      - Index: 0
+        Item: Great_Hero_Bravery
+        RequiredItems:
+          - Index: 0
+            Item: Ancient_Hero_Bravery
+            Amount: 2
+      - Index: 1
+        Item: Great_Hero_Wisdom
+        RequiredItems:
+          - Index: 0
+            Item: Ancient_Hero_Wisdom
+            Amount: 2
+
+
+  - Name: Nyarom_Zeny
+    Items:
+      - Index: 0
+        Item: Gunslinger_Enchant
+        Stock: 99999
+        zeny: 1000000
+      - Index: 1
+        Item: Fan_Upgrade_Kit
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 2
+        Item: Suit_Upgrade_Kit
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 3
+        Item: Candy_Bag_Scroll_Melee
+        Stock: 99999
+        zeny: 1000000    
+      - Index: 4
+        Item: Candy_Bag_Scroll_Range
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 5
+        Item: Candy_Bag_Scroll_Magic
+        Stock: 99999
+        zeny: 1000000
+      - Index: 6
+        Item: Booster_Amplifier
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 7
+        Item: Magical_Cat_Hand
+        Stock: 99999
+        zeny: 1000000 
+      - Index: 8
+        Item: Silver_Statue
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 9
+        Item: Silver_Statue
+        Stock: 99999
+        zeny: 1000000
+      - Index: 10
+        Item: Gold_Statue
+        Stock: 99999
+        zeny: 1000000
+      - Index: 11
+        Item: Cursed_Blood
+        Stock: 99999
+        zeny: 500000 
+      - Index: 12
+        Item: Time_Unseal_Key
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 13
+        Item: Gemstone_Of_Time
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 14
+        Item: Joy_Of_Victory
+        Stock: 99999
+        zeny: 1000000
+      - Index: 15
+        Item: Overclocker
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 16
+        Item: PendantStoneForWork
+        Stock: 99999
+        zeny: 500000  
+      - Index: 17
+        Item: Dark_Stone
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 18
+        Item: EXP_Overclocker
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 19
+        Item: Hero_LT_Refine_Melee
+        Stock: 99999
+        zeny: 30000000 
+      - Index: 20
+        Item: Hero_LT_Refine_Magic
+        Stock: 99999
+        zeny: 30000000
+      - Index: 21
+        Item: Lens_Craft_Stone
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 22
+        Item: Loki_Advice
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 23
+        Item: Loki_Coin
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 24
+        Item: Loki_Advice_2
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 25
+        Item: Loki_Coin_2
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 26
+        Item: Loki_Advice_3
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 27
+        Item: Loki_Coin_3
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 28
+        Item: Fan_Upgrade_Kit_EX
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 29
+        Item: Loki_Advice_4
+        Stock: 99999
+        zeny: 1000000  
+      - Index: 30
+        Item: Loki_Coin_4
+        Stock: 99999
+        zeny: 1000000    
+  - Name: balheele
+    Items:
+       - Index: 0
+         Item: EpisodClear13
+         RequiredItems:
+           - Index: 0
+             Item: Nyangvine_Fruit
+             Amount: 100
+       - Index: 1
+         Item: EpisodClear14
+         RequiredItems:
+           - Index: 0
+             Item: Nyangvine_Fruit
+             Amount: 30
+       - Index: 2
+         Item: EpisodClear15
+         RequiredItems:
+           - Index: 0
+             Item: Nyangvine_Fruit
+             Amount: 100
+       - Index: 3
+         Item: EpisodClear16
+         RequiredItems:
+           - Index: 0
+             Item: Nyangvine_Fruit
+             Amount: 200
+       - Index: 4
+         Item: EpisodClear17
+         RequiredItems:
+           - Index: 0
+             Item: Nyangvine_Fruit
+             Amount: 100
+       - Index: 5
+         Item: EpisodClear18
+         RequiredItems:
+           - Index: 0
+             Item: Nyangvine_Fruit
+             Amount: 100
+       - Index: 6
+         Item: EpisodClear19
+         RequiredItems:
+           - Index: 0
+             Item: Nyangvine_Fruit
+             Amount: 100
+       - Index: 7
+         Item: EpisodClear20
+         RequiredItems:
+           - Index: 0
+             Item: Nyangvine_Fruit
+             Amount: 100

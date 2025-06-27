@@ -3154,7 +3154,7 @@ Body:
     Fullness: 2   # unknown
     HungryDelay: 120   # unknown
     IntimacyFed: 15   # unknown
-    CaptureRate: 0   # unknown
+    CaptureRate: 300   # unknown
     SpecialPerformance: false   # unknown
     Script: >
       .@i = getpetinfo(PETINFO_INTIMATE);
@@ -3547,3 +3547,1331 @@ Body:
 #         bonus bBaseAtk,10;
 #         bonus bDef,-3;
 #      }
+  - Mob: WICKED_NYMPH
+    Evolution:
+      - Target: BACSOJIN2
+        ItemRequirements:
+          - Item: Mightysoul_Essence
+            Amount: 30
+          - Item: Civil_Servant_Card
+            Amount: 10
+          - Item: Li_Me_Mang_Ryang_Card
+            Amount: 10
+          - Item: Dancing_Dragon_Card
+            Amount: 10
+  - Mob: ALIOT
+    Evolution:
+      - Target: KIEL_D_01_2
+        ItemRequirements:
+          - Item: Alicel_Card
+            Amount: 10
+          - Item: Aliza_Card
+            Amount: 10
+          - Item: Aliot_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: BACSOJIN2
+    EggItem: Bacsojin_Egg2
+    FoodItem: High_Class_Pet_food
+    Fullness: 7
+    IntimacyFed: 10
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bDelayrate,-3;
+         bonus bMaxSPrate,5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bDelayrate,-2;
+         bonus bMaxSPrate,4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bDelayrate,-1;
+         bonus bMaxSPrate,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMaxSPrate,2;
+      }
+  - Mob: KIEL_D_01_2
+    EggItem: Kiel_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bShortAtkRate,5;
+         bonus bAspdRate,7;
+         bonus bHit,18;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bShortAtkRate,3;
+         bonus bAspdRate,6;
+         bonus bHit,15;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bShortAtkRate,1;
+         bonus bAspdRate,5;
+         bonus bHit,12;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bAspdRate,4;
+         bonus bHit,9;
+      }
+  - Mob: DARK_PRIEST
+    Evolution:
+      - Target: DARK_ILLUSION2
+        ItemRequirements:
+          - Item: Skull
+            Amount: 500
+          - Item: Rosary
+            Amount: 1
+          - Item: Sacred_Marks
+            Amount: 5
+          - Item: Dark_Priest_Card
+            Amount: 10
+  - Mob: KNIGHT_OF_ABYSS2
+    EggItem: Abyss_Knight_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bAddClass,Class_Boss,5;
+         bonus bPAtk,2;
+         bonus bAtkRate,5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bAddClass,Class_Boss,3;
+         bonus bPAtk,1;
+         bonus bAtkRate,4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bAtkRate,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bAtkRate,2;
+      }
+  - Mob: CWHITEKNIGHT
+    EggItem: Change_W_Knight_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bMatkRate,2;
+         bonus bAtkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bMatkRate,1;
+         bonus bAtkRate,1;
+      }
+    Evolution:
+      - Target: KNIGHT_OF_ABYSS2
+        ItemRequirements:
+          - Item: Piece_Of_Darkness
+            Amount: 100
+          - Item: Rune_Of_Darkness
+            Amount: 100
+          - Item: Sin_Fragment
+            Amount: 200
+          - Item: Knight_Of_Abyss_Card
+            Amount: 5
+      - Target: GH_WHITEKNIGHT
+        ItemRequirements:
+          - Item: Shining_Round_Shell
+            Amount: 100
+          - Item: EP19_Shiny_Seaweed
+            Amount: 100
+          - Item: Fate_Fragment
+            Amount: 200
+          - Item: White_Knightage_Card
+            Amount: 2
+  - Mob: GH_WHITEKNIGHT
+    EggItem: White_Knight_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAddClass,Class_Boss,5;
+         bonus bSMatk,2;
+         bonus bMatkRate,5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAddClass,Class_Boss,3;
+         bonus bSMatk,1;
+         bonus bMatkRate,4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bMatkRate,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMatkRate,2;
+      }
+  - Mob: DARK_ILLUSION2
+    EggItem: Dark_Illusion_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,5;
+         bonus bVariableCastrate,-5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,3;
+         bonus bVariableCastrate,-4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bVariableCastrate,-3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bVariableCastrate,-2;
+      }
+    Evolution:
+      - Target: DARK_LORD2
+        ItemRequirements:
+          - Item: Dark_Illusion_Card
+            Amount: 10
+          - Item: Evil_Druid_Card
+            Amount: 10
+          - Item: Dark_Priest_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: DARK_LORD2
+    EggItem: Dark_Lord_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,7;
+         bonus bSpeedRate,25;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,7;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,5;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus2 bMagicAtkEle,Ele_Dark,3;
+      }
+  - Mob: HORNET
+    Evolution:
+      - Target: GIANT_HONET2
+        ItemRequirements:
+          - Item: Honey
+            Amount: 80
+          - Item: Royal_Jelly
+            Amount: 50
+          - Item: Honey_Jar
+            Amount: 200
+          - Item: Sharp_Feeler
+            Amount: 300
+          - Item: Hornet_Card
+            Amount: 10
+  - Mob: GIANT_HONET2
+    EggItem: aegis_9192
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAtkEle,Ele_Wind,5;
+         bonus bVariableCastrate,-5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAtkEle,Ele_Wind,3;
+         bonus bVariableCastrate,-4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bVariableCastrate,-3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bVariableCastrate,-2;
+      }
+    Evolution:
+      - Target: MISTRESS3
+        ItemRequirements:
+          - Item: Driller_Card
+            Amount: 10
+          - Item: Mantis_Card
+            Amount: 10
+          - Item: Side_Winder_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: MISTRESS3
+    EggItem: aegis_9193
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bAddClass,Class_Normal,7;
+         bonus bNoSizeFix;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bAddClass,Class_Normal,5;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus2 bAddClass,Class_Normal,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus2 bAddClass,Class_Normal,1;
+      }
+  - Mob: EP20_COPO
+    TameItem: Ep20_Fatty_Icegangu
+    EggItem: Copo_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 2000
+    SpecialPerformance: false
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bMatkRate,2;
+         bonus bAtkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bMatkRate,1;
+         bonus bAtkRate,1;
+      }
+    Evolution:
+      - Target: EP20_ICEWIND1
+        ItemRequirements:
+          - Item: Ep20_Huge_Feather_G
+            Amount: 200
+          - Item: Ep20_Copo_Egg_Shell
+            Amount: 150
+          - Item: Ep20_Copo_Head_F
+            Amount: 150
+          - Item: Grey_Icewind_Card
+            Amount: 1
+      - Target: EP20_ICEWIND2
+        ItemRequirements:
+          - Item: Ep20_Huge_Feather_W
+            Amount: 200
+          - Item: Ep20_Copo_Egg_Shell
+            Amount: 150
+          - Item: Ep20_Copo_Head_F
+            Amount: 150
+          - Item: Icewind_Card
+            Amount: 1
+  - Mob: EP20_ICEWIND1
+    EggItem: Grey_Icewind_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bAtkRate,3;
+         bonus bPow,2;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bAtkRate,2;
+         bonus bPow,1;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bAtkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bAtkRate,1;
+      }
+  - Mob: EP20_ICEWIND2
+    EggItem: Icewind_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bMatkRate,3;
+         bonus bSpl,2;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bMatkRate,2;
+         bonus bSpl,1;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bMatkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMatkRate,1;
+      }
+  - Mob: LOLI_RURI
+    Evolution:
+      - Target: BLUEMOON_LOLI_RURI2
+        ItemRequirements:
+          - Item: Bat_Cage
+            Amount: 500
+          - Item: Blue_Herb
+            Amount: 50
+          - Item: Loki's_Whispers
+            Amount: 1
+          - Item: Loli_Ruri_Card
+            Amount: 10
+  - Mob: BLUEMOON_LOLI_RURI2
+    EggItem: Blue_Moon_Loli_Ruri_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bMaxHPrate,5;
+         bonus bVit,4;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bMaxHPrate,3;
+         bonus bVit,3;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bMaxHPrate,2;
+         bonus bVit,2;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMaxHPrate,1;
+         bonus bVit,1;
+      }
+  - Mob: LEAF_CAT
+    Evolution:
+      - Target: WILD_ROSE3
+        ItemRequirements:
+          - Item: Great_Leaf
+            Amount: 500
+          - Item: Black_Kitty_Doll
+            Amount: 200
+          - Item: Fish_Tail
+            Amount: 200
+          - Item: Leaf_Cat_Card
+            Amount: 10
+  - Mob: WILD_ROSE3
+    EggItem: Wild_Rose_Egg2
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bAspdRate,5;
+         bonus bCritical,7;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bAspdRate,3;
+         bonus bCritical,5;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bCritical,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bCritical,2;
+      }
+    Evolution:
+      - Target: EDDGA3
+        ItemRequirements:
+          - Item: Leaf_Cat_Card
+            Amount: 10
+          - Item: Wild_Rose_Card
+            Amount: 10
+          - Item: Jaguar_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: EDDGA3
+    EggItem: Eddga_Egg2
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bCRate,3;
+         bonus bCritical,8;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bCRate,1;
+         bonus bCritical,7;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bCritical,6;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bCritical,5;
+      }
+  - Mob: CAT_O_NINE_TAIL
+    Evolution:
+      - Target: MOONLIGHT2
+        ItemRequirements:
+          - Item: Mightysoul_Essence
+            Amount: 30
+          - Item: Nine_Tail_Card
+            Amount: 10
+          - Item: Sohee_Card
+            Amount: 10
+          - Item: Munak_Card
+            Amount: 10
+  - Mob: MOONLIGHT2
+    EggItem: Moonlight_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: true
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+      	bonus bCritical,6;
+      	bonus bHit,6;
+      	petautobonus "{ bonus2 bHPRegenRate,500,1000; bonus2 bSPRegenRate,20,1000; }",50,5000,BF_WEAPON|BF_SHORT;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+      	bonus bCritical,5;
+      	bonus bHit,5;
+      	petautobonus "{ bonus2 bHPRegenRate,400,1000; bonus2 bSPRegenRate,10,1000; }",20,4000,BF_WEAPON|BF_SHORT;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+      	bonus bCritical,4;
+      	bonus bHit,4;
+                  	petautobonus "{ bonus2 bHPRegenRate,300,1000; }",20,4000,BF_WEAPON|BF_SHORT;
+      }
+      else {
+      	bonus bCritical,3;
+      	bonus bHit,3;
+      }
+  - Mob: HODREMLIN
+    Evolution:
+      - Target: GLOOMUNDERNIGHT2
+        ItemRequirements:
+          - Item: Hodremlin_Card
+            Amount: 10
+          - Item: Isilla_Card
+            Amount: 10
+          - Item: Agav_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: GLOOMUNDERNIGHT2
+    EggItem: Gloom_Under_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAtkEle,Ele_Fire,7;
+         bonus2 bMagicAtkEle,Ele_Ghost,7;
+         bonus bMatk,40;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAtkEle,Ele_Fire,5;
+         bonus2 bMagicAtkEle,Ele_Ghost,5;
+         bonus bMatk,30;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bMatk,20;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMatk,10;
+      }
+  - Mob: HIGH_ORC
+    Evolution:
+      - Target: ORK_HERO2
+        ItemRequirements:
+          - Item: Mightysoul_Essence
+            Amount: 30
+          - Item: Orc_Warrior_Card
+            Amount: 10
+          - Item: Orc_Baby_Card_Card
+            Amount: 10
+          - Item: Voucher_Of_Orcish_Hero
+            Amount: 10
+  - Mob: ORK_HERO2
+    EggItem: Ork_Hero_EGG
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bCritAtkRate,3;
+         bonus bAtkRate,7;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bCritAtkRate,1;
+         bonus bAtkRate,4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bAtkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bAtkRate,1;
+      }
+  - Mob: PHREEONI2
+    EggItem: Phreeoni_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bHit,18;
+         bonus bPerfectHitRate,15;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bHit,14;
+         bonus bPerfectHitRate,10;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bHit,10;
+         bonus bPerfectHitRate,5;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bHit,6;
+      }
+  - Mob: WICKED_NYMPH
+    Evolution:
+      - Target: BACSOJIN2
+        ItemRequirements:
+          - Item: Mightysoul_Essence
+            Amount: 30
+          - Item: Civil_Servant_Card
+            Amount: 10
+          - Item: Li_Me_Mang_Ryang_Card
+            Amount: 10
+          - Item: Dancing_Dragon_Card
+            Amount: 10
+  - Mob: ALIOT
+    Evolution:
+      - Target: KIEL_D_01_2
+        ItemRequirements:
+          - Item: Alicel_Card
+            Amount: 10
+          - Item: Aliza_Card
+            Amount: 10
+          - Item: Aliot_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: BACSOJIN2
+    EggItem: Bacsojin_Egg2
+    FoodItem: High_Class_Pet_food
+    Fullness: 7
+    IntimacyFed: 10
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bDelayrate,-3;
+         bonus bMaxSPrate,5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bDelayrate,-2;
+         bonus bMaxSPrate,4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bDelayrate,-1;
+         bonus bMaxSPrate,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMaxSPrate,2;
+      }
+  - Mob: KIEL_D_01_2
+    EggItem: Kiel_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bShortAtkRate,5;
+         bonus bAspdRate,7;
+         bonus bHit,18;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bShortAtkRate,3;
+         bonus bAspdRate,6;
+         bonus bHit,15;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bShortAtkRate,1;
+         bonus bAspdRate,5;
+         bonus bHit,12;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bAspdRate,4;
+         bonus bHit,9;
+      }
+  - Mob: DARK_PRIEST
+    Evolution:
+      - Target: DARK_ILLUSION2
+        ItemRequirements:
+          - Item: Skull
+            Amount: 500
+          - Item: Rosary
+            Amount: 1
+          - Item: Sacred_Marks
+            Amount: 5
+          - Item: Dark_Priest_Card
+            Amount: 10
+  - Mob: KNIGHT_OF_ABYSS2
+    EggItem: Abyss_Knight_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bAddClass,Class_Boss,5;
+         bonus bPAtk,2;
+         bonus bAtkRate,5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bAddClass,Class_Boss,3;
+         bonus bPAtk,1;
+         bonus bAtkRate,4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bAtkRate,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bAtkRate,2;
+      }
+  - Mob: CWHITEKNIGHT
+    EggItem: Change_W_Knight_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bMatkRate,2;
+         bonus bAtkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bMatkRate,1;
+         bonus bAtkRate,1;
+      }
+    Evolution:
+      - Target: KNIGHT_OF_ABYSS2
+        ItemRequirements:
+          - Item: Piece_Of_Darkness
+            Amount: 100
+          - Item: Rune_Of_Darkness
+            Amount: 100
+          - Item: Sin_Fragment
+            Amount: 200
+          - Item: Knight_Of_Abyss_Card
+            Amount: 5
+      - Target: GH_WHITEKNIGHT
+        ItemRequirements:
+          - Item: Shining_Round_Shell
+            Amount: 100
+          - Item: EP19_Shiny_Seaweed
+            Amount: 100
+          - Item: Fate_Fragment
+            Amount: 200
+          - Item: White_Knightage_Card
+            Amount: 2
+  - Mob: GH_WHITEKNIGHT
+    EggItem: White_Knight_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAddClass,Class_Boss,5;
+         bonus bSMatk,2;
+         bonus bMatkRate,5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAddClass,Class_Boss,3;
+         bonus bSMatk,1;
+         bonus bMatkRate,4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bMatkRate,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMatkRate,2;
+      }
+  - Mob: DARK_ILLUSION2
+    EggItem: Dark_Illusion_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,5;
+         bonus bVariableCastrate,-5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,3;
+         bonus bVariableCastrate,-4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bVariableCastrate,-3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bVariableCastrate,-2;
+      }
+    Evolution:
+      - Target: DARK_LORD2
+        ItemRequirements:
+          - Item: Dark_Illusion_Card
+            Amount: 10
+          - Item: Evil_Druid_Card
+            Amount: 10
+          - Item: Dark_Priest_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: DARK_LORD2
+    EggItem: Dark_Lord_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,7;
+         bonus bSpeedRate,25;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,7;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus2 bMagicAtkEle,Ele_Dark,5;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus2 bMagicAtkEle,Ele_Dark,3;
+      }
+  - Mob: HORNET
+    Evolution:
+      - Target: GIANT_HONET2
+        ItemRequirements:
+          - Item: Honey
+            Amount: 80
+          - Item: Royal_Jelly
+            Amount: 50
+          - Item: Honey_Jar
+            Amount: 200
+          - Item: Sharp_Feeler
+            Amount: 300
+          - Item: Hornet_Card
+            Amount: 10
+  - Mob: GIANT_HONET2
+    EggItem: aegis_9192
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAtkEle,Ele_Wind,5;
+         bonus bVariableCastrate,-5;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAtkEle,Ele_Wind,3;
+         bonus bVariableCastrate,-4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bVariableCastrate,-3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bVariableCastrate,-2;
+      }
+    Evolution:
+      - Target: MISTRESS3
+        ItemRequirements:
+          - Item: Driller_Card
+            Amount: 10
+          - Item: Mantis_Card
+            Amount: 10
+          - Item: Side_Winder_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: MISTRESS3
+    EggItem: aegis_9193
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bAddClass,Class_Normal,7;
+         bonus bNoSizeFix;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bAddClass,Class_Normal,5;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus2 bAddClass,Class_Normal,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus2 bAddClass,Class_Normal,1;
+      }
+  - Mob: EP20_COPO
+    TameItem: Ep20_Fatty_Icegangu
+    EggItem: Copo_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 2000
+    SpecialPerformance: false
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bMatkRate,2;
+         bonus bAtkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bMatkRate,1;
+         bonus bAtkRate,1;
+      }
+    Evolution:
+      - Target: EP20_ICEWIND1
+        ItemRequirements:
+          - Item: Ep20_Huge_Feather_G
+            Amount: 200
+          - Item: Ep20_Copo_Egg_Shell
+            Amount: 150
+          - Item: Ep20_Copo_Head_F
+            Amount: 150
+          - Item: Grey_Icewind_Card
+            Amount: 1
+      - Target: EP20_ICEWIND2
+        ItemRequirements:
+          - Item: Ep20_Huge_Feather_W
+            Amount: 200
+          - Item: Ep20_Copo_Egg_Shell
+            Amount: 150
+          - Item: Ep20_Copo_Head_F
+            Amount: 150
+          - Item: Icewind_Card
+            Amount: 1
+  - Mob: EP20_ICEWIND1
+    EggItem: Grey_Icewind_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bAtkRate,3;
+         bonus bPow,2;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bAtkRate,2;
+         bonus bPow,1;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bAtkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bAtkRate,1;
+      }
+  - Mob: EP20_ICEWIND2
+    EggItem: Icewind_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bMatkRate,3;
+         bonus bSpl,2;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bMatkRate,2;
+         bonus bSpl,1;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bMatkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMatkRate,1;
+      }
+  - Mob: LOLI_RURI
+    Evolution:
+      - Target: BLUEMOON_LOLI_RURI2
+        ItemRequirements:
+          - Item: Bat_Cage
+            Amount: 500
+          - Item: Blue_Herb
+            Amount: 50
+          - Item: Loki's_Whispers
+            Amount: 1
+          - Item: Loli_Ruri_Card
+            Amount: 10
+  - Mob: BLUEMOON_LOLI_RURI2
+    EggItem: Blue_Moon_Loli_Ruri_Egg
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bMaxHPrate,5;
+         bonus bVit,4;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bMaxHPrate,3;
+         bonus bVit,3;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bMaxHPrate,2;
+         bonus bVit,2;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMaxHPrate,1;
+         bonus bVit,1;
+      }
+  - Mob: LEAF_CAT
+    Evolution:
+      - Target: WILD_ROSE3
+        ItemRequirements:
+          - Item: Great_Leaf
+            Amount: 500
+          - Item: Black_Kitty_Doll
+            Amount: 200
+          - Item: Fish_Tail
+            Amount: 200
+          - Item: Leaf_Cat_Card
+            Amount: 10
+  - Mob: WILD_ROSE3
+    EggItem: Wild_Rose_Egg2
+    FoodItem: Pet_Food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bAspdRate,5;
+         bonus bCritical,7;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bAspdRate,3;
+         bonus bCritical,5;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bCritical,3;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bCritical,2;
+      }
+    Evolution:
+      - Target: EDDGA3
+        ItemRequirements:
+          - Item: Leaf_Cat_Card
+            Amount: 10
+          - Item: Wild_Rose_Card
+            Amount: 10
+          - Item: Jaguar_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: EDDGA3
+    EggItem: Eddga_Egg2
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bCRate,3;
+         bonus bCritical,8;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bCRate,1;
+         bonus bCritical,7;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bCritical,6;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bCritical,5;
+      }
+  - Mob: CAT_O_NINE_TAIL
+    Evolution:
+      - Target: MOONLIGHT2
+        ItemRequirements:
+          - Item: Mightysoul_Essence
+            Amount: 30
+          - Item: Nine_Tail_Card
+            Amount: 10
+          - Item: Sohee_Card
+            Amount: 10
+          - Item: Munak_Card
+            Amount: 10
+  - Mob: MOONLIGHT2
+    EggItem: Moonlight_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: true
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+      	bonus bCritical,6;
+      	bonus bHit,6;
+      	petautobonus "{ bonus2 bHPRegenRate,500,1000; bonus2 bSPRegenRate,20,1000; }",50,5000,BF_WEAPON|BF_SHORT;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+      	bonus bCritical,5;
+      	bonus bHit,5;
+      	petautobonus "{ bonus2 bHPRegenRate,400,1000; bonus2 bSPRegenRate,10,1000; }",20,4000,BF_WEAPON|BF_SHORT;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+      	bonus bCritical,4;
+      	bonus bHit,4;
+                  	petautobonus "{ bonus2 bHPRegenRate,300,1000; }",20,4000,BF_WEAPON|BF_SHORT;
+      }
+      else {
+      	bonus bCritical,3;
+      	bonus bHit,3;
+      }
+  - Mob: HODREMLIN
+    Evolution:
+      - Target: GLOOMUNDERNIGHT2
+        ItemRequirements:
+          - Item: Hodremlin_Card
+            Amount: 10
+          - Item: Isilla_Card
+            Amount: 10
+          - Item: Agav_Card
+            Amount: 10
+          - Item: Mightysoul_Essence
+            Amount: 30
+  - Mob: GLOOMUNDERNIGHT2
+    EggItem: Gloom_Under_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus2 bMagicAtkEle,Ele_Fire,7;
+         bonus2 bMagicAtkEle,Ele_Ghost,7;
+         bonus bMatk,40;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus2 bMagicAtkEle,Ele_Fire,5;
+         bonus2 bMagicAtkEle,Ele_Ghost,5;
+         bonus bMatk,30;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bMatk,20;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bMatk,10;
+      }
+  - Mob: HIGH_ORC
+    Evolution:
+      - Target: ORK_HERO2
+        ItemRequirements:
+          - Item: Mightysoul_Essence
+            Amount: 30
+          - Item: Orc_Warrior_Card
+            Amount: 10
+          - Item: Orc_Baby_Card_Card
+            Amount: 10
+          - Item: Voucher_Of_Orcish_Hero
+            Amount: 10
+  - Mob: ORK_HERO2
+    EggItem: Ork_Hero_EGG
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bCritAtkRate,3;
+         bonus bAtkRate,7;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bCritAtkRate,1;
+         bonus bAtkRate,4;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bAtkRate,2;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bAtkRate,1;
+      }
+  - Mob: PHREEONI2
+    EggItem: Phreeoni_Egg
+    FoodItem: High_Class_Pet_food
+    Fullness: 2
+    HungryDelay: 120
+    IntimacyFed: 15
+    CaptureRate: 0
+    SpecialPerformance: false
+    AllowAutoFeed: true
+    Script: >
+      .@i = getpetinfo(PETINFO_INTIMATE);
+      if (.@i >= PET_INTIMATE_LOYAL) {
+         bonus bHit,18;
+         bonus bPerfectHitRate,15;
+      }
+      else if (.@i >= PET_INTIMATE_CORDIAL) {
+         bonus bHit,14;
+         bonus bPerfectHitRate,10;
+      }
+      else if (.@i >= PET_INTIMATE_NEUTRAL) {
+         bonus bHit,10;
+         bonus bPerfectHitRate,5;
+      }
+      else if (.@i >= PET_INTIMATE_AWKWARD || .@i >= PET_INTIMATE_SHY) {
+         bonus bHit,6;
+      }

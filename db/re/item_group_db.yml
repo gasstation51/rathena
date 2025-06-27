@@ -64793,199 +64793,325 @@ Body:
         Algorithm: Random
         List:
           - Index: 0
-            Item: Sillit_Pong_Box
-            Rate: 1
+            Item: Sillit_Pong_Box # 실릿 퐁 상자
             Announced: true
+            Rate: 136
           - Index: 1
-            Item: High_Refine_Guarantee
-            Rate: 5
+            Item: High_Refine_Guarantee # 고급 제련 보장권 봉투
             Announced: true
+            Rate: 137
           - Index: 2
-            Item: Enchant_Ticket
-            Rate: 6
-            Amount: 2
-            Announced: true
+            Item: Enchant_Ticket # 인챈트 티켓
+            Rate: 137
           - Index: 3
-            Item: Mightysoul_Essence
-            Rate: 9
+            Item: Shadow_Random_Box # 쉐도우 랜덤박스 세트
             Announced: true
+            Rate: 137
           - Index: 4
-            Item: M_Dimension_Essence
-            Rate: 9
+            Item: Mightysoul_Essence # 강력한 영혼의 정수
             Announced: true
+            Rate: 137
           - Index: 5
-            Item: Refine_Guarantee
-            Rate: 83
+            Item: M_Dimension_Essence # 강력한 차원의 정수
             Announced: true
+            Rate: 137
           - Index: 6
-            Item: SLD_Boss_Card_Album
-            Rate: 9
-            Announced: true
+            Item: Refine_Guarantee # 제련 보장권 봉투 
+            Rate: 137
           - Index: 7
-            Item: AceCard_Box
-            Rate: 10
+            Item: SLD_Boss_Card_Album # 봉인된 보스 카드첩
             Announced: true
+            Rate: 137
           - Index: 8
-            Item: Gambler_Seal_KR
-            Rate: 10
-            Announced: true
+            Item: Refine_Hammer_Box # 제련 해머 랜덤 세트
+            Rate: 137
           - Index: 9
-            Item: Pump_Of_Spirit
-            Rate: 20
+            Item: Coupon_FateSinBoots # 선악의 부츠 쿠폰
             Announced: true
+            Rate: 137
           - Index: 10
-            Item: Slayer_Furious
-            Rate: 50
-            Announced: true
+            Item: FateSin_Boots_Hammer # 선악의 부츠 제련망치
+            Rate: 137
           - Index: 11
-            Item: Trident_Furious
-            Rate: 50
-            Announced: true
+            Item: AceCard_Box # 입에 문 에이스 카드 선택상자
+            Rate: 1
           - Index: 12
-            Item: Demonius_Furious
-            Rate: 50
+            Item: Gambler_Seal_KR_ # 갬블러의 씰
             Announced: true
+            Rate: 137
           - Index: 13
-            Item: Demonsword_Furious
-            Rate: 50
+            Item: Pump_Of_Spirit # 영혼의 뚫어뻥
             Announced: true
+            Rate: 137
           - Index: 14
-            Item: Foxtail_Furious
-            Rate: 50
+            Item: IsgardCrown_Box # 이스가르드 크라운 선택상자
             Announced: true
+            Rate: 137
           - Index: 15
-            Item: Setaria_Furious
-            Rate: 50
-            Announced: true
+            Item: Isgard_Crown_Hammer # 이스가르드 크라운 제련망치
+            Rate: 137
           - Index: 16
-            Item: FuriousCirclet_DK
-            Rate: 50
+            Item: Coupon_GoodnEvil_Helm # 선악의 관 쿠폰
             Announced: true
+            Rate: 137
           - Index: 17
-            Item: FuriousCirclet_ABC
-            Rate: 50
+            Item: Coupon_Justice_Weapon # 선의 무기 쿠폰
             Announced: true
+            Rate: 137
           - Index: 18
-            Item: FuriousCirclet_SH
-            Rate: 50
+            Item: Coupon_Injustice_Weapon # 악의 무기 쿠폰
             Announced: true
+            Rate: 137
           - Index: 19
-            Item: FuriousBoots
-            Rate: 50
+            Item: S_Master_Weapon # 마스터 웨폰 쉐도우
             Announced: true
+            Rate: 137
           - Index: 20
-            Item: Refine_Furious
-            Rate: 50
+            Item: S_Master_Shield # 마스터 쉴드 쉐도우
             Announced: true
+            Rate: 137
           - Index: 21
-            Item: S_Master_Weapon
-            Rate: 20
-            Announced: true
+            Item: M_Armor_Box # M.아머 쉐도우 상자
+            Rate: 137
           - Index: 22
-            Item: S_Master_Shield
-            Rate: 20
-            Announced: true
+            Item: M_Shoes_Box # M.슈즈 쉐도우 상자
+            Rate: 137
           - Index: 23
-            Item: M_Armor_Box
-            Rate: 100
+            Item: M_Pendant_Box # M.펜던트 쉐도우 상자
+            Rate: 137
           - Index: 24
-            Item: M_Shoes_Box
-            Rate: 100
+            Item: M_Earring_Box # M.이어링 쉐도우 상자
+            Rate: 137
           - Index: 25
-            Item: M_Pendant_Box
-            Rate: 100
+            Item: Blacksmith_Bless_Box_3 # 대장장이의 축복 3개 상자
+            Rate: 137
           - Index: 26
-            Item: M_Earring_Box
-            Rate: 100
+            Item: Shadow_Hammer_Box_3 # 홀그렌의 쉐도우 제련망치 3개 상자
+            Rate: 137
           - Index: 27
-            Item: Blacksmith_Bless_Box_3
-            Rate: 30
-            Announced: true
+            Item: S_Enchant_Essence_Box_3 # 쉐도우 에센스 3개 상자
+            Rate: 137
           - Index: 28
-            Item: Shadow_Hammer_Box_3
-            Rate: 30
-            Announced: true
+            Item: Shadow_R_M_Box_ # 쉐도우 마법서 선택상자
+            Rate: 137
           - Index: 29
-            Item: S_Enchant_Essence_Box_3
-            Rate: 30
-            Announced: true
+            Item: C_CatPaw_7Day_Box_ # 무한 고양이손 티켓 7일상자 
+            Rate: 137
           - Index: 30
-            Item: Shadow_Up_Box
-            Rate: 400
+            Item: C_Wing_Of_Fly_5Day_Box_ # 무한 파리의 날개 5일상자 
+            Rate: 137
           - Index: 31
-            Item: Blacksmith_Blessing
-            Rate: 400
+            Item: Shadow_9_Refine_Hammer # 쉐도우 9제련 해머
+            Rate: 137
           - Index: 32
-            Item: S_Enchant_Essence
-            Rate: 268
+            Item: Temporal_Manteau_Box # 시간의 망토 상자
+            Rate: 137
           - Index: 33
-            Item: Loki_Coin_Box
-            Rate: 60
+            Item: Overwhelm_Armor_Box # 시간의 갑옷 상자
+            Rate: 137
           - Index: 34
-            Item: Loki_Advice_Box
-            Rate: 60
+            Item: BloodyKnight_Shield_Box # 저주받은 기사의 방패 상자
+            Announced: true
+            Rate: 137
           - Index: 35
-            Item: Material_Shadow_CubeII
-            Rate: 150
+            Item: AngelPoring_Box # 천사포링 부츠 상자
+            Rate: 137
           - Index: 36
-            Item: Shadow_Refine_Hammer
-            Rate: 400
+            Item: Mini_Fan_Box # 미니 선풍기 상자
+            Announced: true
+            Rate: 137
           - Index: 37
-            Item: Skill_Shadow_Cube
-            Rate: 420
+            Item: Kafra_Box # 카프라 상자
+            Rate: 137
           - Index: 38
-            Item: All_Shadow_Cube
-            Rate: 300
+            Item: Poring_Sunglasses_Box # 포링 선글래스 상자
+            Announced: true
+            Rate: 137
           - Index: 39
-            Item: Shadow_R_M_Box_
-            Rate: 300
+            Item: Spell_Circuit # 스펠 서킷
+            Rate: 137
           - Index: 40
-            Item: Shadowdecon_Ore_Box
-            Rate: 400
+            Item: Violet_Halo # 바이올렛 헤일로
+            Rate: 137
           - Index: 41
-            Item: Zelunium_Ore_Box
-            Rate: 400
+            Item: Magical_Booster_Box # 매지컬 부스터 상자
+            Rate: 137
           - Index: 42
-            Item: Minus_Status_Box_
-            Rate: 400
+            Item: Mad_Bunny_Box # 매드바니 상자
+            Rate: 137
           - Index: 43
-            Item: Poison_Bottle_Box2
-            Rate: 400
+            Item: Happy_Balloon_K # 해피 벌룬
+            Rate: 137
           - Index: 44
-            Item: C_CatPaw_7Day_Box_
-            Rate: 400
+            Item: New_Hat_Box # 신상 모자 상자
+            Rate: 137
           - Index: 45
-            Item: Alchemist_Box_
-            Rate: 400
+            Item: New_Hat_Box2 # 신상 모자 상자 II
+            Rate: 137
           - Index: 46
-            Item: Ein_Ore_Box
-            Rate: 400
+            Item: New_Hat_Box3 # 신상 모자 상자 III
+            Rate: 137
           - Index: 47
-            Item: Fate_Fragment_Box
-            Rate: 400
+            Item: General_Helmet_ # 장군의 투구
+            Rate: 137
           - Index: 48
-            Item: Sin_Fragment_Box
-            Rate: 400
+            Item: Classical_Fhat # 멋진 페더 햇
+            Rate: 137
           - Index: 49
-            Item: Amethyst_Fragment_Box
-            Rate: 400
+            Item: Dog_Officer # 멍멍장교
+            Rate: 137
           - Index: 50
-            Item: Snow_F_Ore_Box
-            Rate: 400
+            Item: Amistr_Beret # 아미스트르 베레모
+            Rate: 137
           - Index: 51
-            Item: C_Wing_Of_Fly_5Day_Box_
-            Rate: 400
+            Item: Chrismas_Tree # 성탄절의 수호 트리
+            Rate: 137
           - Index: 52
-            Item: Brown_Dia_Box_3_7
-            Rate: 400
+            Item: Victory_Wing_Ear # 승리의 날개귀
+            Rate: 137
           - Index: 53
-            Item: Gold
-            Rate: 400
-            Amount: 3
+            Item: Ancient_Hero_Will # 고대 영웅의 의지
+            Rate: 137
           - Index: 54
-            Item: World_Tour_Ticket
-            Rate: 400
-            Amount: 5
+            Item: Famous_Hat_Box # 버라이어티 햇 박스
+            Rate: 137
+          - Index: 55
+            Item: OS_Helm_Box #OS무기용 투구 선택상자
+            Rate: 137
+          - Index: 56
+            Item: BioWeapon_Helm_Box # 생체연구소 투구 상자
+            Rate: 137
+          - Index: 57
+            Item: Thanatos_Pendant_Box # 타나토스 목걸이 상자
+            Rate: 137
+          - Index: 58
+            Item: Tree_Of_Sprout_Box # 어린잎 스크롤
+            Rate: 137
+          - Index: 59
+            Item: EXP_Processor # EXP 어드바이저
+            Rate: 137
+          - Index: 60
+            Item: Tree_Enchant_Ticket # 세계수의 어린잎 인챈트 티켓
+            Rate: 137
+          - Index: 61
+            Item: Celine_Dress # 셀린느의 드레스
+            Rate: 137
+          - Index: 62
+            Item: Celine_Brooch_K # 셀린느의 브로치
+            Rate: 137
+          - Index: 63
+            Item: FullPene_Select_Box # 풀페니
+            Rate: 137
+          - Index: 64
+            Item: FullTemp_Select_Box # 풀템페
+            Rate: 137
+          - Index: 65
+            Item: Durable_Select_Box # 듀러블
+            Rate: 137
+          - Index: 66
+            Item: Deepblue_Sunglasses # 딥블루 선글라스
+            Rate: 137
+          - Index: 67
+            Item: Loki_Coin_Box # 로키의 동전 선택상자
+            Rate: 137
+          - Index: 68
+            Item: Smoky_TransformHat_LT # 스모키의 변신 나뭇잎-LT
+            Rate: 137
+          - Index: 69
+            Item: Loki_Advice_Box # 로키의 조언 선택상자
+            Rate: 137
+          - Index: 70
+            Item: Survive_Circlet_K_LT # 서바이벌 서클릿-LT
+            Rate: 137
+          - Index: 71
+            Item: World_Tour_Ticket # 월드 이동권 10개
+            Rate: 137
+            Amount: 10
+          - Index: 72
+            Item: SurviveOrb_K_LT # 서바이벌 오브-LT
+            Rate: 137
+          - Index: 73
+            Item: aegis_1001810 # 진노의 관 쿠폰
+            Rate: 137  
+          - Index: 74
+            Item: aegis_1001809 # 진노의 무기 쿠폰
+            Rate: 137
+          - Index: 75
+            Item: Clever_Select_Box # 클레버
+            Rate: 137  
+          - Index: 76
+            Item: AllMighty_Select_Box # 올마이티
+            Rate: 137
+          - Index: 77
+            Item: TrueGem_Select_Box # 트루젬
+            Rate: 137  
+          - Index: 78
+            Item: PerfectSize_Select_Box # 퍼펙트 사이즈
+            Rate: 137  
+          - Index: 79
+            Item: Mammoth_Select_Box # 맥시멈 맘모스
+            Rate: 137  
+          - Index: 80
+            Item: SpellCaster_Select_Box # 스펠캐스터
+            Rate: 137  
+          - Index: 81
+            Item: Absorb_Select_Box # 앱솔브
+            Rate: 137  
+          - Index: 82
+            Item: R_Bearers_Select_Box # 로드 베어러즈
+            Rate: 137  
+          - Index: 83
+            Item: Hasty_Select_Box # 헤이스티
+            Rate: 137  
+          - Index: 84
+            Item: MAutoSpell_Select_Box # 트루젬
+            Rate: 137  
+          - Index: 85
+            Item: Infinity_Select_Box # 인피니티
+            Rate: 137  
+          - Index: 86
+            Item: EXP_Select_Box # 익스피리언스
+            Rate: 137  
+          - Index: 87
+            Item: M_Blitz_Select_Box # 메가블리츠
+            Rate: 137  
+          - Index: 88
+            Item: S_M_Spell_Weapon # 매지컬 스펠 
+            Rate: 137
+          - Index: 89
+            Item: S_M_Spell_Shield # 매지컬 스펠
+            Rate: 137  
+          - Index: 90
+            Item: Chung_E_Ticket # 트루젬
+            Announced: true
+            Rate: 137  
+          - Index: 91
+            Item: Spring_Rabbit_Ticket # 트루젬
+            Announced: true
+            Rate: 137  
+          - Index: 92
+            Item: Evt_Cos_Coin # 냥다래 마일리지
+            Amount: 30
+            Rate: 137 
+          - Index: 91
+            Item: Happy_Balloon_K # 트루젬
+            Announced: true
+            Rate: 137 
+            
+#  포링선글래스 상자 수정(ra랑 본섭 내용이 달라서 수정)
+  - Group: PORING_SUNGLASSES_BOX
+    SubGroups:
+      - SubGroup: 1
+        List:
+          - Index: 0
+            Item: Poring_Sunglasses_K
+            Rate: 9000
+          - Index: 1
+            Item: Poring_Sunglasses_K
+            Rate: 100
+          - Index: 2
+            Item: Poring_Sunglasses_K_
+            Rate: 900
   - Group: SEASON_EVT_REWARD
     SubGroups:
       - SubGroup: 6
@@ -65829,6 +65955,18 @@ Body:
             Item: World_Tour_Ticket
             Amount: 20
           - Index: 6
+            Item: E_ILL_Up
+            Amount: 3 
+          - Index: 7
+            Item: EP17_1_A_Ticket
+            Amount: 5
+          - Index: 8
+            Item: EP17_1_EVT39
+            Amount: 75 
+          - Index: 9
+            Item: EP17_1_EVT02
+            Amount: 225   
+          - Index: 10 
             Item: Booster_Pack_140
   - Group: BOOSTER_PACK_145
     SubGroups:
@@ -65885,6 +66023,15 @@ Body:
             Item: World_Tour_Ticket
             Amount: 20
           - Index: 8
+            Item: E_Auto_Up
+            Amount: 5
+          - Index: 9
+            Item: EP17_2_A_Ticket
+            Amount: 5
+          - Index: 10
+            Item: BarMealTicket
+            Amount: 375  
+          - Index: 11
             Item: Booster_Pack_170
   - Group: BOOSTER_PACK_175
     SubGroups:
@@ -95134,7 +95281,7 @@ Body:
         Algorithm: All
         List:
           - Index: 0
-            Item: Booster_Call
+            Item: P_Booster_Call
           - Index: 1
             Item: Booster_Pack_1
           - Index: 2
@@ -118135,6 +118282,7 @@ Body:
         List:
           - Index: 0
             Item: Zonda_Support
+            Duration: 43200
   - Group: AEGIS_103871
     SubGroups:
       - SubGroup: 6

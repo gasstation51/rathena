@@ -780,6 +780,12 @@ struct Battle_Config
 	int32 open_box_weight_rate;
 	int32 major_overweight_rate;
 	int32 trade_count_stackable;
+	int32 show_guild_emblem;
+
+	int feature_goldpc_active;
+	int feature_goldpc_time;
+	int feature_goldpc_max_points;
+	int feature_goldpc_vip;
 
 #include <custom/battle_config_struct.inc>
 };

@@ -104,9 +104,10 @@ Body:
     Help: |
       Opens the auction window.
   - Command: autoloot
+    Aliases: [루팅]
     Help: |
-      Params: <on|off|#>
-      Makes items go straight into your inventory.
+      입력값: <on|off|#>
+      아이템이 인벤토리로 자동으로 들어옵니다
   - Command: autolootitem
     Aliases:
       - alootid
@@ -117,17 +118,16 @@ Body:
       Params: reset to remove all item IDs
       Makes items of this specific item ID go straight into your inventory.
   - Command: autoloottype
-    Aliases:
-      - aloottype
+    Aliases: [루팅타입]
     Help: |
-      Params: None. Shows a short help.
-      Params: +<type name/ID> to add an item type
-      Params: -<type name/ID> to remove an item type
-      Params: reset to remove all item types
-      Makes items of this specific item type go straight into your inventory.
+      입력값: 짧은 도움말을 표시합니다.
+      입력값: +<type name/ID> 루팅할 타입을 추가합니다.
+      입력값: -<type name/ID> 추가한 타입을 제거합니다.
+      입력값: 모든 타입을 제거합니다.
+      특정 타입의 아이템을 즉시 인벤토리로 넣습니다.
       Type List:
-        healing = 0, usable = 2, etc = 3, weapon = 4, armor = 5,
-        card = 6, petegg = 7, petarmor = 8, ammo = 10
+        회복 = 0, 소모품 = 2, 기타 = 3, 무기 = 4, 방어구 = 5,
+        카드 = 6, 펫알 = 7, 펫장비 = 8, 탄약 = 10
   - Command: autotrade
     Aliases:
       - at
@@ -305,8 +305,9 @@ Body:
     Help: |
       Makes all maps to have another cloudy weather effect.
   - Command: commands
+    Aliases: [명령어]
     Help: |
-      Displays a list of atcommands that you can use.
+      사용 가능한 명령어 목록을 보여줍니다.
   - Command: completequest
     Help: |
       Params: <quest ID>
@@ -468,29 +469,31 @@ Body:
       Params: <# of levels>
       Raise Guild by desired number of levels
   - Command: gmotd
+    Aliases: [말]  
     Help: |
       Broadcasts the Message of The Day to all players.
   - Command: go
+    Aliases: [마을]
     Help: |
       Params: <city name|number>
-      Warps you to a city.
-      -3: (Memo point 2)  14: louyang         31: mora
-      -2: (Memo point 1)  15: start point     32: dewata
-      -1: (Memo point 0)  16: prison/jail     33: malangdo island
-       0: prontera              17: jawaii             34: malaya port
-       1: morocc                18: ayothaya       35: eclage
-       2: geffen                  19: einbroch       36: lasagna
-       3: payon                  20: lighthalzen
-       4: alberta                 21: einbech
-       5: izlude                   22: hugel
-       6: aldebaran           23: rachel
-       7: xmas (lutie)        24: veins
-       8: comodo               25: moscovia
-       9: yuno                     26: midgard camp
-      10: amatsu               27: manuk
-      11: gonryun              28: splendide
-      12: umbala               29: brasilis
-      13: niflheim              30: el dicastes
+      이동할 마을의 이름이나 번호를 입력하세요
+      -3: (Memo point 2)  14: 뤄양         31: 모라마을
+      -2: (Memo point 1)  15: start point     32: 데와타
+      -1: (Memo point 0)  16: prison/jail     33: 말랑도
+       0: 프론테라              17: jawaii             34: 포트 말라야
+       1: 모로크                18: 아요타야       35: 에클라쥬
+       2: 게펜                  19: 아인브로크       36: 라자냐
+       3: 페이욘                  20: 리히타르젠
+       4: 알베르타                 21: 아인베흐
+       5: 이즈루드                   22: 휘겔
+       6: 알데바란           23: 라헬
+       7: 루티에        24: 베인스
+       8: 코모도               25: 모스코비아
+       9: 유노                     26: 미드가르드 연합 주둔지
+      10: 아마쯔               27: 마누크
+      11: 곤륜              28: 스플랑디드
+      12: 움발라               29: 브라질리스
+      13: 니플헤임              30: 엘 디카스테스
   - Command: grade
     Help: |
       Params: <equip position> <+/- amount>
@@ -647,11 +650,10 @@ Body:
         3: Party
         4: Character
   - Command: iteminfo
-    Aliases:
-      - ii
+    Aliases: [템정보]
     Help: |
-      Params: <item name|ID>
-      Shows item info (type, price etc).
+      입력값: <아이템이름|아이템ID>
+      아이템 정보를 보여줍니다 (타입, 가격 등).
   - Command: itemlist
     Aliases:
       - inventorylist
@@ -825,10 +827,9 @@ Body:
       Params: <message>
       Broadcasts a message without your name on the current map (in yellow).
   - Command: load
-    Aliases:
-      - return
+    Aliases: [귀환]
     Help: |
-      Warps you to your save point.
+      저장 포인트로 이동합니다.
   - Command: loadnpc
     Help: |
       Params: <path to script>
@@ -927,12 +928,10 @@ Body:
         8 = job level up (super novice)
         9 = base level up (taekwon)
   - Command: mobinfo
-    Aliases:
-      - monsterinfo
-      - mi
+    Aliases: [몹정보]
     Help: |
-      Params: <monster name|ID>
-      Shows monster info (stats, exp, drops etc).
+      입력값: <몹이름|몹ID>
+      몬스터 정보를 보여줍니다. (스텟, 경험치, 드랍 등).
   - Command: mobsearch
     Help: |
       Params: <monster name|ID>
@@ -1475,9 +1474,11 @@ Body:
       Params: [<name>]
       Shows a list of online players and their location.
   - Command: whodrops
+    Aliases: 
+      - [누구드롭]
     Help: |
-      Params: <item name|ID>
-      Shows who drops an item (monster with highest drop rates).
+      입력값: <아이템이름|아이템ID>
+      아이템을 누가 드롭하는지 알려줍니다. (가장 높은 드랍률 순).
   - Command: whogm
     Help: |
       Params: [match_text] - Like @who+@who2+who3, but only for GM.

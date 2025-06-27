@@ -1,0 +1,30 @@
+Header:
+  Type: BARTER_DB
+  Version: 2
+
+body:
+  - Name: Consumables
+    Items:
+      - Index: 0
+        Item: Megaphone_
+        zeny: 500
+  - Name: PetTaming
+    Items:
+      - Index: 0
+        Item: Megaphone_
+        zeny: 500
+  - Name: PetFood
+    Items:
+      - Index: 0
+        Item: Megaphone_
+        zeny: 500
+  - Name: FourthJobMats
+    Items:
+      - Index: 0
+        Item: Megaphone_
+        zeny: 500
+  - Name: JobSpecificMats
+    Items:
+      - Index: 0
+        Item: Megaphone_
+        zeny: 500

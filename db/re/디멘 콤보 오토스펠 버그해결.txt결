@@ -1,0 +1,192 @@
+src/map/pc.cpp
+
+
+
+
+class map_session_data : public block_list {
+public:
+	+struct block_list* last_autospell_target = nullptr; // 최초 트리거 대상 저장용 필드
+
+	struct unit_data ud;
+	struct view_data vd;
+	struct status_data base_status, battle_status;
+	status_change sc;
+	struct regen_data regen;
+	struct regen_data_sub sregen, ssregen;
+	+uint16 last_autospell_trigger_skill = 0;
+	+uint64 last_autospell_trigger_tick = 0;
+	//NOTE: When deciding to add a flag to state or special_state, take into consideration that state is preserved in
+	//status_calc_pc, while special_state is recalculated in each call. [Skotlex]
+	struct s_state {
+		uint32 active : 1; //Marks active player (not active is logging in/out, or changing map servers)
+		uint32 menu_or_input : 1;// if a script is waiting for feedback from the player
+		uint32 dead_sit : 2;
+		e_lr_flag lr_flag;
+		uint32 connect_new : 1;
+		uint32 arrow_atk : 1;
+		uint32 gangsterparadise : 1;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+skill.cpp
+// 셀프 대상 스킬 목록 (필요한 스킬 ID만 추가하세요)
+static const uint16 self_target_skills[] = {
+	5380, // 예: 엘레멘탈 마스터 스킬 ID 예시
+	//  2020, // 예: 다른 셀프 캐스팅 스킬 ID 예시
+		0     // 종료 표시
+};
+
+bool is_self_target_skill(uint16 skill_id) {
+	for (int i = 0; self_target_skills[i] != 0; i++) {
+		if (self_target_skills[i] == skill_id)
+			return true;
+	}
+	return false;
+}
+
+int32 skill_onskillusage(map_session_data* sd, struct block_list* bl, uint16 skill_id, t_tick tick) {
+	if (sd == nullptr || !skill_id)
+		return 0;
+
+	// tick이 바뀌면 last_autospell_target 초기화
+	if (sd->last_autospell_trigger_tick != tick) {
+		sd->last_autospell_target = nullptr;
+		
+	}
+
+	// 중복 발동 방지: 같은 스킬, 같은 tick에 이미 발동했으면 무시
+	if (sd->last_autospell_trigger_skill == skill_id && sd->last_autospell_trigger_tick == tick)
+		return 0;
+
+	// 현재 발동 스킬과 tick 기록
+	sd->last_autospell_trigger_skill = skill_id;
+	sd->last_autospell_trigger_tick = tick;
+
+	// 최초 타겟 저장
+	if (sd->last_autospell_target == nullptr) {
+		sd->last_autospell_target = bl;
+		
+	}
+	for (auto& it : sd->autospell3) {
+		if (it.trigger_skill != skill_id)
+			continue;
+
+		if (it.lock)
+			continue;  // autospell already being executed
+
+		uint16 skill = it.id;
+
+		// 최초 타겟과 다르면 건너뜀
+		if (bl != sd->last_autospell_target && !is_self_target_skill(it.id)) // 셀프 타겟 스킬은 예외 처리
+			continue;
+
+		sd->state.autocast = 1; // set this to bypass sd->canskill_tick check
+
+		if (skill_isNotOk(skill, *sd)) {
+			sd->state.autocast = 0;
+			continue;
+		}
+
+		sd->state.autocast = 0;
+
+		e_cast_type cast_type = skill_get_casttype(skill);
+
+		block_list* tbl = nullptr;
+
+		// --- 대상 설정 시작 ---
+		if (cast_type == CAST_GROUND) {
+			tbl = (block_list*)sd;
+		}
+		else if (cast_type == CAST_DAMAGE) {
+			if (bl != nullptr)
+				tbl = bl;      // 대상 있으면 그 대상
+			else
+				tbl = (block_list*)sd;  // 대상 없으면 자신
+		}
+		else if (cast_type == CAST_NODAMAGE) {
+			if (bl != nullptr)
+				tbl = bl;
+			else
+				tbl = (block_list*)sd;
+		}
+		else {
+			tbl = (block_list*)sd;
+		}
+
+		if (rnd() % 1000 >= it.rate)
+			continue;
+
+		uint16 skill_lv = it.lv ? it.lv : 1;
+
+		if (it.flag & AUTOSPELL_FORCE_RANDOM_LEVEL)
+			skill_lv = rnd_value<uint16>(1, skill_lv); // random skill_lv
+
+		if (cast_type == CAST_GROUND && !skill_pos_maxcount_check(sd, tbl->x, tbl->y, skill_id, skill_lv, BL_PC, false))
+			continue;
+
+		if (battle_config.autospell_check_range &&
+			!battle_check_range(bl, tbl, skill_get_range2(sd, skill, skill_lv, true)))
+			continue;
+
+		sd->state.autocast = 1;
+		it.lock = true;
+		skill_consume_requirement(sd, skill, skill_lv, 1);
+
+		switch (cast_type) {
+		case CAST_GROUND:
+			skill_castend_pos2(sd, tbl->x, tbl->y, skill, skill_lv, tick, 0);
+			break;
+		case CAST_NODAMAGE:
+			skill_castend_nodamage_id(sd, tbl, skill, skill_lv, tick, 0);
+			break;
+		case CAST_DAMAGE:
+			skill_castend_damage_id(sd, tbl, skill, skill_lv, tick, 0);
+			break;
+		default:
+			// 기타 타입 필요시 처리 (필요하다면 여기 확장)
+			break;
+		}
+
+		it.lock = false;
+		sd->state.autocast = 0;
+	}
+
+	// 이하 기존 코드 유지 (autobonus 등)
+	if (sd != nullptr) {
+		// Player
+		if (!sd->autobonus3.empty()) {
+			for (auto& it : sd->autobonus3) {
+				if (it == nullptr)
+					continue;
+				if (rnd_value(0, 1000) >= it->rate)
+					continue;
+				if (it->atk_type != skill_id)
+					continue;
+
+				pc_exeautobonus(*sd, &sd->autobonus3, it);
+			}
+		}
+
+		// Pet
+		if (sd->pd != nullptr && !sd->pd->autobonus3.empty()) {
+			for (auto& it : sd->pd->autobonus3) {
+				if (it == nullptr)
+					continue;
+				if (rnd_value(0, 1000) >= it->rate)
+					continue;
+				if (it->atk_type != skill_id)
+					continue;
+
+				pet_exeautobonus(*sd, &sd->pd->autobonus3, it);
+			}
+		}
+	}
+
+	return 1;
+}		

@@ -599,7 +599,7 @@ Body:
       - Group: 4
         Items:
           - Item: GoodnEvil_Circlet_NW5
-  - Item: Hero_Weapon_Up_S_Box
+  - Item: Aegis_102213 # 영웅의 무기 개조 선택 상자
     Groups:
       - Group: 0
         Items:
@@ -619,7 +619,7 @@ Body:
       - Group: 5
         Items:
           - Item: Hero_Weapon_Up_Box_6
-  - Item: Hero_Weapon_Hammer_S
+  - Item: Aegis_102214 # 개조된 영웅의 무기 제련망치 S
     Groups:
       - Group: 0
         Items:

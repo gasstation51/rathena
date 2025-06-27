@@ -64,6 +64,12 @@ class MapGuild;
 #define ATTENDANCE_DATE_VAR "#AttendanceDate"
 #define ATTENDANCE_COUNT_VAR "#AttendanceCounter"
 #define ACHIEVEMENTLEVEL "AchievementLevel"
+#ifndef GOLDPC_POINT_VAR
+		#define GOLDPC_POINT_VAR "Goldpc_Points"
+#endif
+#ifndef GOLDPC_SECONDS_VAR
+		#define GOLDPC_SECONDS_VAR "Goldpc_Seconds"
+#endif
 
 //Total number of classes (for data storage)
 #define CLASS_COUNT (JOB_MAX - JOB_NOVICE_HIGH + JOB_MAX_BASIC)
@@ -299,6 +305,8 @@ struct s_autospell {
 	int16 rate, battle_flag;
 	t_itemid card_id;
 	uint8 flag;
+	uint16 last_autospell_trigger_skill = 0;
+	uint64 last_autospell_trigger_tick = 0;
 	bool lock;  // bAutoSpellOnSkill: blocks autospell from triggering again, while being executed
 };
 
@@ -380,12 +388,16 @@ struct s_qi_display {
 
 class map_session_data : public block_list {
 public:
+	struct block_list* last_autospell_target = nullptr; // 최초 트리거 대상 저장용 필드
+
 	struct unit_data ud;
 	struct view_data vd;
 	struct status_data base_status, battle_status;
 	status_change sc;
 	struct regen_data regen;
 	struct regen_data_sub sregen, ssregen;
+	uint16 last_autospell_trigger_skill = 0;
+	uint64 last_autospell_trigger_tick = 0;
 	//NOTE: When deciding to add a flag to state or special_state, take into consideration that state is preserved in
 	//status_calc_pc, while special_state is recalculated in each call. [Skotlex]
 	struct s_state {
@@ -948,6 +960,8 @@ public:
 	s_macro_detect macro_detect;
 
 	std::vector<uint32> party_booking_requests;
+
+	int goldpc_tid;
 
 	void update_look( _look look );
 };
@@ -1773,5 +1787,7 @@ void pc_macro_reporter_process(map_session_data &sd, int32 reporter_account_id =
 #ifdef MAP_GENERATOR
 void pc_reputation_generate();
 #endif
+
+TIMER_FUNC(pc_goldpc_update);
 
 #endif /* PC_HPP */

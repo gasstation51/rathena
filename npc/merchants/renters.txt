@@ -7,7 +7,7 @@
 //===== Compatible With: ===================================== 
 //= rAthena Project
 //===== Description: ========================================= 
-//= Knight and Crusader Peco Peco Breeders, Falcon Breeder scripts
+//= Knight and Crusader 페코 페코 관리병s, Falcon Breeder scripts
 //===== Additional Comments: ================================= 
 //= Fully working
 //= Added another Falcon Master into the Hunters Guild [Lupus]
@@ -26,14 +26,14 @@
 //= 2.2 Added warg checks. [Euphy]
 //============================================================ 
 
-// PecoPeco Breeder (for Knights) :: breeder
+// 페코 페코 관리병 (for Knights) :: breeder
 //============================================================
-prontera,55,350,5	script	Peco Peco Breeder#knt	105,{
+prontera,55,350,5	script	페코 페코 관리병#knt	105,{
 	if(Upper==0) set .@price,2500; //Normal Peco - default price
 	if(Upper==1) set .@price,2500; //Armored Peco
 	if(Upper==2) set .@price,2500; //Baby Peco
 
-	mes "[Peco Peco Breeder]";
+	mes "[페코 페코 관리병]";
 	if (BaseJob == Job_Knight && Class < Job_Rune_Knight) {
 		mes "Welcome.";
 		mes "Honorable Knight,";
@@ -44,7 +44,7 @@ prontera,55,350,5	script	Peco Peco Breeder#knt	105,{
 		switch(select("Rent Peco Peco:Cancel")) {
 		case 1:
 			if (Zeny < .@price) {
-				mes "[Peco Peco Breeder]";
+				mes "[페코 페코 관리병]";
 				mes "You do not";
 				mes "have enough zeny.";
 				mes "Are you...";
@@ -52,7 +52,7 @@ prontera,55,350,5	script	Peco Peco Breeder#knt	105,{
 				close;
 			}
 			else if(getskilllv("KN_RIDING") == 0) {
-				mes "[Peco Peco Breeder]";
+				mes "[페코 페코 관리병]";
 				mes "I'm sorry, but you're";
 				mes "not eligible for this";
 				mes "service. Please go learn";
@@ -60,14 +60,14 @@ prontera,55,350,5	script	Peco Peco Breeder#knt	105,{
 				close;
 			}
 			else if(checkriding()) {
-				mes "[Peco Peco Breeder]";
+				mes "[페코 페코 관리병]";
 				mes "You're already";
 				mes "mounted on a";
 				mes "Peco Peco.";
 				close;
 			}
 			else if(ismounting()) {
-				mes "[Peco Peco Breeder]";
+				mes "[페코 페코 관리병]";
 				mes "Please remove your cash mount.";
 				close;
 			}
@@ -75,7 +75,7 @@ prontera,55,350,5	script	Peco Peco Breeder#knt	105,{
 			setriding;
 			close;
 		case 2:
-			mes "[Peco Peco Breeder]";
+			mes "[페코 페코 관리병]";
 			mes "I see.";
 			mes "Well then,";
 			mes "have a good day.";
@@ -90,14 +90,14 @@ prontera,55,350,5	script	Peco Peco Breeder#knt	105,{
 	}
 }
 
-// Grand PecoPeco Breeder (for Crusaders)
+// Grand 페코 페코 관리병 (for Crusaders)
 //============================================================
-prontera,232,318,3	script	Peco Peco Breeder#cru	105,{
+prontera,232,318,3	script	페코 페코 관리병#cru	105,{
 	if(Upper==0) set .@price,3500; //Normal Peco - default price
 	if(Upper==1) set .@price,3500; //Armored Peco
 	if(Upper==2) set .@price,3500; //Baby Peco
 
-	mes "[PecoPeco Breeder]";
+	mes "[페코 페코 관리병]";
 	if (BaseJob == Job_Crusader && Class < Job_Rune_Knight) {
 		if(Upper != 1 ) mes "Welcome, Crusader.";
 		else mes "Welcome, Paladin.";
@@ -109,7 +109,7 @@ prontera,232,318,3	script	Peco Peco Breeder#cru	105,{
 		switch(select("Rent a PecoPeco:Quit")) {
 		case 1:
 			if (Zeny < .@price) {
-				mes "[Peco Peco Breeder]";
+				mes "[페코 페코 관리병]";
 				mes "You do not";
 				mes "have enough zeny.";
 				mes "If you would like";
@@ -118,20 +118,20 @@ prontera,232,318,3	script	Peco Peco Breeder#cru	105,{
 				close;
 			}
 			else if(getskilllv("KN_RIDING") == 0) {
-				mes "[Peco Peco Breeder]";
+				mes "[페코 페코 관리병]";
 				mes "You must first learn";
 				mes "to ride a PecoPeco before";
 				mes "I can rent one to you.";
 				close;
 			}
 			else if(checkriding()) {
-				mes "[Peco Peco Breeder]";
+				mes "[페코 페코 관리병]";
 				mes "You are already";
 				mes "mounted on a Peco Peco.";
 				close;
 			}
 			else if(ismounting()) {
-				mes "[Peco Peco Breeder]";
+				mes "[페코 페코 관리병]";
 				mes "Please remove your cash mount.";
 				close;
 			}
@@ -139,7 +139,7 @@ prontera,232,318,3	script	Peco Peco Breeder#cru	105,{
 			setriding;
 			close;
 		case 2:
-			mes "[PecoPeco Breeder]";
+			mes "[페코 페코 관리병]";
 			mes "See you around.";
 			close;
 		}

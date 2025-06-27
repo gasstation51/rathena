@@ -2834,6 +2834,13 @@ int32 mob_getdroprate(struct block_list *src, std::shared_ptr<s_mob_db> mob, int
 			map_session_data *sd = (map_session_data*)src;
 			int32 drop_rate_bonus = 100;
 
+		if (sd->sc.getSCE(SC_PREMIUM_ITEMBOOST))
+		 drop_rate += sd->sc.getSCE(SC_PREMIUM_ITEMBOOST)->val1;
+		if (sd->sc.getSCE(SC_SUB_ITEMBOOST))
+		 drop_rate += sd->sc.getSCE(SC_SUB_ITEMBOOST)->val1;
+		if (sd->sc.getSCE(SC_KAFRA_ITEMBOOST))
+		 drop_rate += sd->sc.getSCE(SC_KAFRA_ITEMBOOST)->val1;
+
 			// In PK mode players get an additional drop chance bonus of 25% if there is a 20 level difference
 			if( battle_config.pk_mode && (int32)(mob->lv - sd->status.base_level) >= 20 ){
 				drop_rate_bonus += 25;

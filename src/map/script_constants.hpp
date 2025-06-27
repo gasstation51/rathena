@@ -597,6 +597,7 @@
 	export_parameter(PCDIECOUNTER_VAR, SP_PCDIECOUNTER);
 	export_parameter(COOKMASTERY_VAR, SP_COOKMASTERY);
 	export_parameter(ACHIEVEMENTLEVEL, SP_ACHIEVEMENT_LEVEL);
+	export_parameter(GOLDPC_POINT_VAR, SP_GOLDPC_POINTS);
 
 	export_constant2("bMaxHP",SP_MAXHP);
 	export_constant2("bMaxSP",SP_MAXSP);
@@ -1859,6 +1860,17 @@
 	export_constant(SC_TOXIN_OF_MANDARA);
 	export_constant(SC_GOLDENE_TONE);
 	export_constant(SC_TEMPERING);
+
+	//premium buff 
+	export_constant(SC_KAFRA_ITEMBOOST);
+	export_constant(SC_KAFRA_EXPBOOST);
+	export_constant(SC_SUB_ITEMBOOST);
+	export_constant(SC_SUB_EXPBOOST);
+	export_constant(SC_SUB_DEADPENALTY);
+	export_constant(SC_PREMIUM_STORAGEBOOST);
+	export_constant(SC_PREMIUM_ITEMBOOST);
+	export_constant(SC_PREMIUM_EXPBOOST);
+
 	export_constant(SC_GRADUAL_GRAVITY);
 	export_constant(SC_ALL_STAT_DOWN);
 	export_constant(SC_KILLING_AURA);
@@ -1899,6 +1911,11 @@
 	export_constant(SC_POWERUP);
 	export_constant(SC_AGIUP);
 	export_constant(SC_PROTECTION);
+	export_constant(SC_CHASING);
+	export_constant(SC_FIRE_CHARM_POWER);
+	export_constant(SC_WATER_CHARM_POWER);
+	export_constant(SC_WIND_CHARM_POWER);
+	export_constant(SC_GROUND_CHARM_POWER);
 	export_constant(SC_BATH_FOAM_A);
 	export_constant(SC_BATH_FOAM_B);
 	export_constant(SC_BATH_FOAM_C);
@@ -1983,6 +2000,7 @@
 	export_constant(SC_CONTENTS_18);
 	export_constant(SC_CONTENTS_19);
 	export_constant(SC_CONTENTS_20);
+	export_constant(SC_OVERCOMING_CRISIS);
 
 /// Do not modify code below this, until the end of the API hook, since it will be automatically generated again
 /// @APIHOOK_START(EFST_CONST)
@@ -10813,6 +10831,9 @@
 	export_constant(SCF_REMOVEONUNEQUIPWEAPON);
 	export_constant(SCF_REMOVEONUNEQUIPARMOR);
 	export_constant(SCF_REMOVEONHERMODE);
+	//premium buff
+	export_constant(SCF_NOTICKSAVE);
+
 	export_constant(SCF_REQUIRENOWEAPON);
 	export_constant(SCF_REMOVEFROMHOMONWARP);
 	export_constant(SCF_REMOVEFROMHOMONMAPWARP);

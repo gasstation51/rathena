@@ -1,0 +1,32 @@
+prontera,148,190,4	script	모험가_지원::boostcall	4_M_ZONDAOYAJI,{
+//	if (BaseJob != Job_Novice || JobLevel > 9) {
+//		mes "[모험가 지원]";
+//		mes "죄송합니다. 저의 도움을 받으실 수 있는 분은";
+//		mes "이제 막 모험을 시작하신 분만 가능합니다.";
+//		close;
+//	}
+
+//	if (getcharvar("has_received_booster") == 1) {
+	if (has_received_booster == 1) {
+		mes "[모험가 지원]";
+		mes "모험가님, 이미 선물을 받았습니다!";
+		close;
+	}
+
+	mes "[모험가 지원]";
+	mes "모험가님, 축하합니다!";
+	mes	"당신은 이제 더욱 힘든 모험을 시작할 준비가 되었습니다.";
+	mes "이 부스터 박스는 당신을 위한 작은 선물입니다.";
+	next;
+
+	getitem 101538,1;
+//	setcharvar("has_received_booster", 1);
+	has_received_booster = 1;
+
+	mes "[모험가 지원]";
+	mes "이 작은 선물이 당신에게 용기와 힘을 줄 것입니다.";
+	mes "당신의 모험에 행운을 빕니다!";
+	close;
+	
+end;
+}

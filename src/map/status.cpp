@@ -3180,6 +3180,8 @@ static int32 status_get_hpbonus(struct block_list *bl, enum e_status_bonus type)
 			if (sc->getSCE(SC_ANGELUS))
 				bonus += sc->getSCE(SC_ANGELUS)->val1 * 50;
 #endif
+			if (sc->getSCE(SC_OVERCOMING_CRISIS))
+				bonus += sc->getSCE(SC_OVERCOMING_CRISIS)->val3;
 		}
 	} else if (type == STATUS_BONUS_RATE) {
 		status_change *sc = status_get_sc(bl);
@@ -3817,7 +3819,7 @@ int32 status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	// Give them all modes except these (useful for clones)
 	base_status->mode = static_cast<e_mode>(MD_MASK&~(MD_STATUSIMMUNE|MD_IGNOREMELEE|MD_IGNOREMAGIC|MD_IGNORERANGED|MD_IGNOREMISC|MD_DETECTOR|MD_ANGRY|MD_TARGETWEAK));
 
-	base_status->size = (sd->class_&JOBL_BABY) ? SZ_SMALL : (((sd->class_&MAPID_BASEMASK) == MAPID_SUMMONER) ? battle_config.summoner_size : SZ_MEDIUM);
+	base_status->size = (sd->class_ & JOBL_BABY) ? SZ_SMALL : ((sd->class_ & MAPID_BASEMASK) == MAPID_SUMMONER ? battle_config.summoner_size : SZ_MEDIUM);
 	if (battle_config.character_size && pc_isriding(sd)) { // [Lupus]
 		if (sd->class_&JOBL_BABY) {
 			if (battle_config.character_size&SZ_BIG)
@@ -3828,7 +3830,7 @@ int32 status_calc_pc_sub(map_session_data* sd, uint8 opt)
 	}
 	base_status->aspd_rate = 1000;
 	base_status->ele_lv = 1;
-	base_status->race = ((sd->class_&MAPID_BASEMASK) == MAPID_SUMMONER) ? battle_config.summoner_race : RC_PLAYER_HUMAN;
+	base_status->race = ((sd->class_ & MAPID_BASEMASK) == MAPID_SUMMONER) ? battle_config.summoner_race : RC_PLAYER_HUMAN;
 	base_status->class_ = CLASS_NORMAL;
 
 	sd->autospell.clear();
@@ -8569,6 +8571,8 @@ static int16 status_calc_patk(struct block_list *bl, status_change *sc, int32 pa
 		patk += sc->getSCE(SC_TEMPORARY_COMMUNION)->val2;
 	if (sc->getSCE(SC_BLESSING_OF_M_CREATURES) != nullptr)
 		patk += sc->getSCE(SC_BLESSING_OF_M_CREATURES)->val2;
+	if (sc->getSCE(SC_OVERCOMING_CRISIS))
+		patk += sc->getSCE(SC_OVERCOMING_CRISIS)->val2;
 
 	return (int16)cap_value(patk, 0, SHRT_MAX);
 }
@@ -8604,6 +8608,8 @@ static int16 status_calc_smatk(struct block_list *bl, status_change *sc, int32 s
 		smatk += sc->getSCE(SC_TEMPORARY_COMMUNION)->val2;
 	if (sc->getSCE(SC_BLESSING_OF_M_CREATURES) != nullptr)
 		smatk += sc->getSCE(SC_BLESSING_OF_M_CREATURES)->val2;
+	if (sc->getSCE(SC_OVERCOMING_CRISIS))
+		smatk += sc->getSCE(SC_OVERCOMING_CRISIS)->val2;
 
 	return (int16)cap_value(smatk, 0, SHRT_MAX);
 }
@@ -12601,7 +12607,7 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 		case SC_ARCLOUSEDASH:
 			val2 = 15 + 5 * val1; // AGI
 			val3 = 25; // Move speed increase
-			if (sd && (sd->class_&MAPID_BASEMASK) == MAPID_SUMMONER)
+			if (sd && (sd->class_ & MAPID_BASEMASK) == MAPID_SUMMONER)
 				val4 = 10; // Ranged ATK increase if the target is a Doram
 			break;
 		case SC_SHRIMP:
@@ -12995,6 +13001,10 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 			val2 = (1 + val1 / 2) * 25;
 			val3 = 50 + 50 * val1;
 			break;
+		case SC_OVERCOMING_CRISIS:
+			val2 = 3 * val1;
+			val3 = 15000 * val1;
+			break;
 
 		default:
 			if (calc_flag.none() && scdb->skill_id == 0 && scdb->icon == EFST_BLANK && scdb->opt1 == OPT1_NONE && scdb->opt2 == OPT2_NONE && scdb->state.none() && scdb->flag.none() && scdb->endonstart.empty() && scdb->endreturn.empty() && scdb->fail.empty() && scdb->endonend.empty()) {
@@ -13016,7 +13026,9 @@ static bool status_change_start_post_delay(block_list* src, block_list* bl, sc_t
 				clif_changelook(bl,LOOK_WEAPON,0);
 				clif_changelook(bl,LOOK_SHIELD,0);
 				clif_changelook(bl,LOOK_CLOTHES_COLOR,vd->look[LOOK_CLOTHES_COLOR]);
+#if PACKETVER_MAIN_NUM < 20231220
 				clif_changelook(bl,LOOK_BODY2,0);
+#endif
 				break;
 			case SC_STONE:
 			case SC_STONEWAIT:

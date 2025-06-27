@@ -9116,6 +9116,46 @@ Body:
       Bleeding: true
       Confusion: true
       Freeze: true
+  - Status: Chasing
+    Icon: EFST_CHASING
+    DurationLookup: ABC_HIT_AND_SLIDING
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: Fire_Charm_Power
+    Icon: EFST_FIRE_CHARM_POWER
+    DurationLookup: SS_FOUR_CHARM
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: Water_Charm_Power
+    Icon: EFST_WATER_CHARM_POWER
+    DurationLookup: SS_FOUR_CHARM
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: Wind_Charm_Power
+    Icon: EFST_WIND_CHARM_POWER
+    DurationLookup: SS_FOUR_CHARM
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+  - Status: Ground_Charm_Power
+    Icon: EFST_GROUND_CHARM_POWER
+    DurationLookup: SS_FOUR_CHARM
+    Flags:
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true    
   - Status: Bath_foam_a
     Icon: EFST_BATH_FOAM_A
     Flags:
@@ -9739,6 +9779,17 @@ Body:
       NoBanishingBuster: true
       NoDispell: true
       NoClearance: true
+  - Status: Overcoming_Crisis
+    Icon: EFST_OVERCOMING_CRISIS
+    DurationLookup: HN_OVERCOMING_CRISIS
+    CalcFlags:
+      Patk: true
+      Smatk: true
+      MaxHp: true
+    Flags:
+      NoBanishingBuster: true
+      NoDispell: true
+      NoClearance: true    
   - Status: Shadow_Clock
     Icon: EFST_SHADOW_CLOCK
     DurationLookup: SS_TOKEDASU
@@ -9905,3 +9956,75 @@ Body:
     Script: |
       bonus bVariableCastrate, getstatus(SC_CONTENTS_20, 1);
       bonus bAspd, getstatus(SC_CONTENTS_20, 2);
+  - Status: Premium_Expboost
+    Icon: EFST_AID_PERIOD_PLUSEXP_2ND
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoSave: true
+  - Status: Premium_Itemboost
+    Icon: EFST_AID_PERIOD_RECEIVEITEM_2ND
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoSave: true
+  - Status: Premium_Storageboost
+    Icon: EFST_AID_PERIOD_ADDSTOREITEMCOUNT
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoSave: true
+  - Status: Sub_Expboost
+    Icon: EFST_AID_PERIOD_PLUSEXP
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoSave: true
+  - Status: Sub_Itemboost
+    Icon: EFST_AID_PERIOD_RECEIVEITEM
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoSave: true
+  - Status: Sub_Deadpenalty
+    Icon: EFST_AID_PERIOD_DEADPENALTY
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoSave: true
+  - Status: Kafra_Expboost
+    Icon: EFST_PERIOD_PLUSEXP_2ND
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoTickSave: true
+  - Status: Kafra_Itemboost
+    Icon: EFST_PERIOD_RECEIVEITEM_2ND
+    Flags:
+      NoRemoveOnDead: true
+      NoClearbuff: true
+      NoDispell: true
+      NoBanishingBuster: true
+      NoClearance: true
+      NoTickSave: true

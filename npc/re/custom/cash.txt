@@ -1,0 +1,43 @@
+prontera,150,180,5	script	캐시 충전원	4_CAT,{
+	mes "[캐시 충전원]";
+	mes "어서와~ 나는 제니를 캐시 포인트로 바꿔주는 고양이야!";
+	mes " ^0000FF1,000^000000 제니당 ^FF00001^000000 캐시 포인트로 환전해줄게.";
+	next;
+
+	while (true) {
+		.@max_cash = Zeny / 1000;
+
+		mes "[캐시 충전원]";
+		mes "현재 보유 제니: ^0000FF" + Zeny + "^000000";
+		mes "현재 제니로 최대 ^FF0000" + .@max_cash + " 캐시^000000까지 환전할 수 있어.";
+		mes "얼마나 환전할래?";
+		mes "(0 입력 시 취소)";
+		input .@cash;
+
+		if (.@cash <= 0) {
+			mes "환전을 취소했어.";
+			close;
+		}
+
+		.@required_zeny = .@cash * 1000;
+
+		if (Zeny < .@required_zeny) {
+			mes "제니가 부족해~";
+			mes "현재 제니로는 최대 ^FF0000" + .@max_cash + " 캐시^000000까지만 환전할 수 있어.";
+			next;
+			continue;
+		}
+
+		mes "[캐시 충전원]";
+		mes "총 ^0000FF" + .@required_zeny + " 제니^000000를";
+		mes "^FF0000" + .@cash + " 캐시^000000로 바꿔줄게!";
+		if (select("환전한다:취소") == 2) close;
+
+		Zeny -= .@required_zeny;
+		#CASHPOINTS += .@cash;
+
+		mes "환전 완료!";
+		mes "보유 캐시 : ^FF0000" + #CASHPOINTS + "^000000";
+		close;
+	}
+}

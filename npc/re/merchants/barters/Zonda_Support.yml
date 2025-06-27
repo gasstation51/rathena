@@ -1,0 +1,20 @@
+Header:
+  Type: BARTER_DB
+  Version: 2
+
+ 
+Body:
+  - Name: zonda
+    Items:
+      - Index: 0
+        Item: K_Secret_Key  # 카츄아의 비밀열쇠
+        RequiredItems:
+          - Index: 0
+            Item: Mysterious_Fruit
+            Amount: 20
+      - Index: 1
+        Item: Mysterious_Fruit_Box  # 신비한 열매 5개 바구니
+        RequiredItems:
+          - Index: 0
+            Item: Service_30_Egg_Shell
+            Amount: 1

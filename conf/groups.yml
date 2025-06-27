@@ -46,8 +46,14 @@ Body:
     Name: Player
     Level: 0
     Commands:
-      changedress: true
-      resurrect: true
+      commands: true
+      mobinfo: true
+      iteminfo: true
+      whodrops: true
+      autoloot: true
+      autoloottype: true
+      go: true
+      load: true
     Permissions:
       # without this basic permissions regular players could not trade or party
       can_trade: true

@@ -54,7 +54,7 @@ sec_in02,126,178,3	script	Kachua's Secret Box#bm	4_TREASURE_BOX,{
 				close;
 			} else {
 				for (.@i = 1; .@i <= 10; ++.@i) {
-					progressbar "4d4dff",2;
+					progressbar "4d4dff",1;
 					if (checkweight(1201,1) == 0 || ((MaxWeight - Weight) * 100 / MaxWeight) < 10) {
 						mes "^4d4dffPlease make sure you have enough space in your inventory.^000000";
 						close;

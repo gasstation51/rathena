@@ -54,7 +54,7 @@ malangdo,124,152,3	script	Mysterious Cookie Shop#stone	4_COOKIEHOUSE,{
 	}
 }
 
-malangdo,116,152,3	script	Fashion Stone Mannequin#Models1	HIDDEN_NPC,{
+malangdo,116,152,3	script	의상 스톤 마네킹#Models1	HIDDEN_NPC,{
 	end;
 OnInit:
 	.@npc_id = getnpcid(0);
@@ -64,7 +64,7 @@ OnInit:
 	end;
 }
 
-malangdo,118,152,3	script	Fashion Stone Mannequin#Models2	HIDDEN_NPC,{
+malangdo,118,152,3	script	의상 스톤 마네킹#Models2	HIDDEN_NPC,{
 	end;
 OnInit:
 	.@npc_id = getnpcid(0);
@@ -75,7 +75,7 @@ OnInit:
 	end;
 }
 
-malangdo,120,152,3	script	Fashion Stone Mannequin#Models3	HIDDEN_NPC,{
+malangdo,120,152,3	script	의상 스톤 마네킹#Models3	HIDDEN_NPC,{
 	end;
 OnInit:
 	.@npc_id = getnpcid(0);
@@ -85,7 +85,7 @@ OnInit:
 	end;
 }
 
-malangdo,122,152,7	script	Fashion Stone Mannequin#Models4	HIDDEN_NPC,{
+malangdo,122,152,7	script	의상 스톤 마네킹#Models4	HIDDEN_NPC,{
 	end;
 OnInit:
 	.@npc_id = getnpcid(0);
